@@ -18,6 +18,3 @@ public class Print {
         System.out.println("|=====================|");
     }
 }
-//Test
-//Test 123
-//hahahahahahhaa
