@@ -21,9 +21,9 @@ public class Distance {
         Scanner y2Input = new Scanner(System.in);
         int y2 = y2Input.nextInt();
 
-        double calculation = ((x2 - x1)^2) + ((y2-y1)^2);
-        double distance = Math.sqrt(calculation); // (double(x2-x1)^2 + (y2-y1)^2);
+        double distance = Math.sqrt(Math.pow(x1-x2, 2.0) + Math.pow(y1-y2, 2.0)); // (double(x2-x1)^2 + (y2-y1)^2);
         System.out.printf("Value: %.3f", distance);
     }
 }
+
 
