@@ -9,11 +9,12 @@ public class Change {
     public static void main(String[] args) {
         System.out.print("Please enter the price to pay: ");
         Scanner priceInput = new Scanner(System.in);
-        int price = priceInput.nextInt();
+        double price = priceInput.nextDouble();
         System.out.print("Please enter the amount paid: ");
         Scanner amountPaid = new Scanner(System.in);
         int amount = amountPaid.nextInt();
-        int remainder = amount - price;
+        double remainderDouble = (amount - price);
+        int remainder = (int) (remainderDouble + 0.5);
 
         int kr1000 = remainder / 1000;
         remainder %= 1000;
@@ -30,7 +31,7 @@ public class Change {
         int kr5 = remainder / 5;
         remainder %= 5;
 
-        System.out.println(" Change: " + (amount - price));
+        System.out.println(" Change: " + (int) (remainderDouble + 0.5));
         System.out.println("1000 kr: " + kr1000);
         System.out.println(" 500 kr: " + kr500);
         System.out.println(" 100 kr: " + kr100);
