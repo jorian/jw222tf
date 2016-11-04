@@ -17,6 +17,5 @@ public class WindChill {
         double windChill = 13.12 + 0.6215 * celsius - 11.37 * Math.pow(windSpeed, 0.16) + 0.3965 * celsius * Math.pow(windSpeed, 0.16);
                 //33 + (celsius - 33) * (0.474 + (0.454 * Math.sqrt(windSpeed - 0.0454 * windSpeed) //((10*Math.sqrt(windSpeed)) - windSpeed + 10.5) * (33 - celsius);
         System.out.println("The wind chill is: " + windChill);
-
     }
 }
