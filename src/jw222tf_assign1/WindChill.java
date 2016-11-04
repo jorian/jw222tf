@@ -8,14 +8,16 @@ import java.util.Scanner;
 public class WindChill {
     public static void main(String[] args) {
         System.out.print("Please give the temperature in degrees Celsius: ");
-        Scanner celsiusInput = new Scanner(System.in);
-        double celsius = celsiusInput.nextDouble();
+        Scanner sc = new Scanner(System.in);
+        double celsius = sc.nextDouble();
         System.out.print("Please give the wind speed in m/s: ");
-        Scanner windSpeedInput = new Scanner(System.in);
-        double windSpeed = windSpeedInput.nextDouble() * 3.6;
+        double windSpeed = sc.nextDouble() * 3.6;
 
-        double windChill = 13.12 + 0.6215 * celsius - 11.37 * Math.pow(windSpeed, 0.16) + 0.3965 * celsius * Math.pow(windSpeed, 0.16);
-                //33 + (celsius - 33) * (0.474 + (0.454 * Math.sqrt(windSpeed - 0.0454 * windSpeed) //((10*Math.sqrt(windSpeed)) - windSpeed + 10.5) * (33 - celsius);
-        System.out.println("The wind chill is: " + windChill);
+        //if the data on the assignments page is entered on the website given as resource for the Siple formula,
+        //the given wind speed 8,4 and temperature -7,8 result in a apparent temperature of -23,8. That's when I
+        //went looking in the source code, where a whole other formula is used:
+        double windChill = (0.045*(5.27*Math.sqrt(windSpeed)+10.45-0.28*windSpeed)*(celsius-33)+33);
+
+        System.out.printf("The wind chill is: %.1f", windChill);
     }
 }
