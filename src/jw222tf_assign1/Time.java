@@ -11,6 +11,7 @@ public class Time {
         System.out.print("Please enter the amount of seconds: ");
         Scanner secondsIn = new Scanner(System.in);
         int seconds = secondsIn.nextInt();
+
         int hours = seconds / 3600;
         int remainder = seconds % 3600;
         int minutes = remainder / 60; //(seconds - (hours * 3600)) / 60;
