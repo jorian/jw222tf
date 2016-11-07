@@ -14,7 +14,7 @@ public class BMI {
         //Scanner weightIn = new Scanner(System.in);
         double weight = sc.nextDouble();
 
-        double bmi = weight / (length * length);
-        System.out.println("Your BMI is: " + Math.round(bmi);
+        double bmi = Math.round(weight / (length * length));
+        System.out.println("Your BMI is: " + Math.round(bmi));
     }
 }
