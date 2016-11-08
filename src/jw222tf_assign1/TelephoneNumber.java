@@ -12,6 +12,7 @@ public class TelephoneNumber {
         for (int i = 0; i < 5; i++) {
             telephoneNumber += String.format("%s", digits.nextInt(9));
         }
+
         System.out.println("Random telephone number: " + telephoneNumber);
     }
 }

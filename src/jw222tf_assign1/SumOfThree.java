@@ -19,5 +19,7 @@ public class SumOfThree {
 
         System.out.println(threeDigits.charAt(0) + " + " + threeDigits.charAt(1) + " + "
                          + threeDigits.charAt(2) + " = " + sumOfThree);
+
+        threeDigitIn.close();
     }
 }
