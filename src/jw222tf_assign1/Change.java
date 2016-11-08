@@ -12,7 +12,7 @@ public class Change {
         System.out.print("Please enter the price to pay: ");
         double price = sc.nextDouble();
         System.out.print("Please enter the amount paid: ");
-        int amount = sc.nextInt();
+        double amount = sc.nextDouble();
 
         double remainderDouble = (amount - price);
         int remainder = (int) (remainderDouble + 0.5);
