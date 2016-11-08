@@ -13,5 +13,7 @@ public class Quote {
         System.out.print("Enter the text to convert to a quote: " );
         String quote = input.nextLine();
         System.out.println("\"" + quote + "\"");
+
+        input.close();
     }
 }
