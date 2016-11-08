@@ -7,15 +7,14 @@ import java.util.Scanner;
  */
 public class WindChill {
     public static void main(String[] args) {
-        System.out.print("Please give the temperature in degrees Celsius: ");
-        Scanner celsiusInput = new Scanner(System.in);
-        double celsius = celsiusInput.nextDouble();
-        System.out.print("Please give the wind speed in m/s: ");
-        Scanner windSpeedInput = new Scanner(System.in);
-        double windSpeed = windSpeedInput.nextDouble() * 3.6;
+        Scanner sc = new Scanner(System.in);
 
-        double windChill = 13.12 + 0.6215 * celsius - 11.37 * Math.pow(windSpeed, 0.16) + 0.3965 * celsius * Math.pow(windSpeed, 0.16);
-                //33 + (celsius - 33) * (0.474 + (0.454 * Math.sqrt(windSpeed - 0.0454 * windSpeed) //((10*Math.sqrt(windSpeed)) - windSpeed + 10.5) * (33 - celsius);
-        System.out.println("The wind chill is: " + windChill);
+        System.out.print("Please give the temperature in degrees Celsius: ");
+        double celsius = sc.nextDouble();
+        System.out.print("Please give the wind speed in m/s: ");
+        double windSpeed = sc.nextDouble();
+
+        double windChill = 33 + (celsius - 33) * (0.474 + 0.454 * Math.sqrt(windSpeed) - 0.0454 * windSpeed);
+        System.out.printf("The wind chill is: %.1f", windChill);
     }
 }
