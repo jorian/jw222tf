@@ -41,5 +41,7 @@ public class Change {
         System.out.println("  10 kr: " + kr10);
         System.out.println("   5 kr: " + kr5);
         System.out.println("   1 kr: " + remainder);
+
+        sc.close();
     }
 }

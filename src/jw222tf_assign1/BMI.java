@@ -15,5 +15,7 @@ public class BMI {
 
         double bmi = weight / (length * length);
         System.out.println("Your BMI is: " + Math.round(bmi));
+
+        sc.close();
     }
 }
