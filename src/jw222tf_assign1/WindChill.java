@@ -16,5 +16,7 @@ public class WindChill {
 
         double windChill = 33 + (celsius - 33) * (0.474 + 0.454 * Math.sqrt(windSpeed) - 0.0454 * windSpeed);
         System.out.printf("The wind chill is: %.1f", windChill);
+
+        sc.close();
     }
 }
