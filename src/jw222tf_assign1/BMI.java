@@ -11,10 +11,9 @@ public class BMI {
         Scanner sc = new Scanner(System.in);
         double length = sc.nextDouble();
         System.out.print("Please enter your weight in kilograms: "); //Same here. if doubles were entered, round doubles to ints first.
-        //Scanner weightIn = new Scanner(System.in);
         double weight = sc.nextDouble();
 
-        double bmi = Math.round(weight / (length * length));
+        double bmi = weight / (length * length));
         System.out.println("Your BMI is: " + Math.round(bmi));
     }
 }
