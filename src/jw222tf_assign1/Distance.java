@@ -8,21 +8,21 @@ import java.lang.Math;
  */
 public class Distance {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
         System.out.print("Enter the x-coordinate of the first coordinates: ");
-        Scanner x1Input = new Scanner(System.in);
-        int x1 = x1Input.nextInt();
+        int x1 = sc.nextInt();
         System.out.print("Enter the y-coordinate of the first coordinates: ");
-        Scanner y1Input = new Scanner(System.in);
-        int y1 = y1Input.nextInt();
+        int y1 = sc.nextInt();
         System.out.print("Enter the x-coordinate of the second coordinates: ");
-        Scanner x2Input = new Scanner(System.in);
-        int x2 = x2Input.nextInt();
+        int x2 = sc.nextInt();
         System.out.print("Enter the y-coordinate of the second coordinates: ");
-        Scanner y2Input = new Scanner(System.in);
-        int y2 = y2Input.nextInt();
+        int y2 = sc.nextInt();
 
         double distance = Math.sqrt(Math.pow(x1-x2, 2.0) + Math.pow(y1-y2, 2.0)); // (double(x2-x1)^2 + (y2-y1)^2);
         System.out.printf("Value: %.3f", distance);
+
+        sc.close();
     }
 }
 
