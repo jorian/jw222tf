@@ -7,12 +7,13 @@ import java.util.Scanner;
 
 public class Change {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
         System.out.print("Please enter the price to pay: ");
-        Scanner priceInput = new Scanner(System.in);
-        double price = priceInput.nextDouble();
+        double price = sc.nextDouble();
         System.out.print("Please enter the amount paid: ");
-        Scanner amountPaid = new Scanner(System.in);
-        int amount = amountPaid.nextInt();
+        int amount = sc.nextInt();
+
         double remainderDouble = (amount - price);
         int remainder = (int) (remainderDouble + 0.5);
 

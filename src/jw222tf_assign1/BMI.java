@@ -13,7 +13,7 @@ public class BMI {
         System.out.print("Please enter your weight in kilograms: "); //Same here. if doubles were entered, round doubles to ints first.
         double weight = sc.nextDouble();
 
-        double bmi = weight / (length * length));
+        double bmi = weight / (length * length);
         System.out.println("Your BMI is: " + Math.round(bmi));
     }
 }
