@@ -1,0 +1,116 @@
+\documentclass{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm,upref}
+\usepackage{tikz}
+\usetikzlibrary{calc, shapes.geometric, arrows}
+
+\begin{document}
+\title{Blockchain and privacy}
+\author{(Laurens) Jorian Wielink}
+\maketitle
+\begin{abstract}
+	An abstract is a short text, written in order to describe the contents of the document. This document has been written in order to pass a course at the Linnaeus University in Växjö. To pass this course, several examples of knowledge about \LaTeX\ are given.
+\end{abstract}
+\newpage
+\tableofcontents
+\newpage
+\section{Trump}
+	It has long been thought that president Donald J. Trump has not been giving \LaTeX\ a lot of attention. Sending clear, well-thought messages through Trumps\footnote{Not the verb} Twitter account have proven to be difficult. 
+\subsection{Reasons}
+There are several reasons for this delicate matter:
+	\begin{itemize}
+		\item Donald J. Trump is an illiterate person;
+		\item Trump does not care much
+		\begin{itemize}
+			\item about literature;
+			\item about women.
+		\end{itemize}
+		\item Trump is a loser.
+	\end{itemize}
+\newpage
+\section{Document visualization}
+	In this chapter, some graphical tweaks are asked to show.
+\subsection{Typefaces}	
+	Computer Modern is the typeface which is used as default. There are, however, several other typefaces to choose from.
+	\begin{itemize}
+		\item Bookman %joking ambassadors
+		\item Charter
+		\item Concrete
+		\item Helvetica
+		\item New Century Schoolbook
+		\item Palatino
+		\item Times
+	\end{itemize} 
+	In order to use one of these typefaces, one must include the corresponding package in the \LaTeX\ document. This is done by using the usepackage command: \bigbreak \texttt{\textbackslash usepackage\{insert typeface here\}} \\[5mm]
+	This command must be included at the top of the \LaTeX\ document.
+\subsection{Hyphenation}
+	When a sentence runs out of much needed paper space, hyphenation is used to glue a broken word together, using a dash. It usually is done automatically, but one can control the way a sentenced will be hyphenated. 
+	\begin{enumerate}
+		\item For the Dutch word for hyphenation to be hyphenated, one can type \texttt{afbreek\textbackslash-teken} in order to break the Dutch word "afbreekteken" in \LaTeX\ where one wants the hyphen to be.
+		\item One can also define certain words in the definition part of the document. Zhe command \texttt{\textbackslash hyphenation\{afbreek\textbackslash-teken\}} should be used.
+		\item In the unlikely event of one being a Swede to write a paper in \LaTeX, and in the even unlikelier event of hyphenating Swedish compound words where the last two letters of the first part of the compounded word are the same as the first letter of the last part of the compounded word (sigh...), then one should use the \texttt{"}-symbol in front of the two letters which are the same. A Swedish word like "topposition", where correct hyphenation should be applied, would be \texttt{to"pposition} in \LaTeX, only if the Swedish babel package is used in the \LaTeX\ document. This results in hyphenated words using three of the same letters; two at the end of a line and one at the beginning of the next line.
+	\end{enumerate}
+\subsection{Mathematics \& typeset}
+	Apart from the formula $f_n=f_{n-1}+f_{n-2} $, one should also show how to typeset the following mathematical formula:
+	\[ 
+		\frac{\sin mx}{\sin x} = (-4)^{(m-1)/2} \prod_{j=1}^{(m-1)/2}\left(\sin^2x - \sin^2\frac{2\pi j}{m}\right)
+	\]
+\subsection{Table}
+	One must show how tables are etiquetted.
+\subsubsection{Table numero uno}
+\begin{center}
+\begin{tabular}{lllrr}
+		\hline
+        &  & \multicolumn{2}{c}{\textbf{World Record}} \\ \cline{3-4} 
+		\textbf{Name} & \textbf{Country} & \textbf{Event} & \textbf{Result}          \\ \hline
+		Anna-Karin Kammerling & Sweden & 50 m butterfly & 25.57 &  \\
+		Wilson Kipketer& Denmark & 800 m & 2:11.96 &  \\
+		Jan \u{Z}elezn\'{y}& Czech Republic & javelin throw & 98.48 &  \\
+		Sergei Bubka& Ukraine\footnote{This, instead of Ukrain without the -e at the end} & pole vault & 6.14 &  \\ \hline 
+\end{tabular} \\
+\end{center}
+\subsubsection{Table numero dos}
+	\begin{table}[b]
+		\centering
+		\caption{Football players}
+		\label{footballplayers}
+		\begin{tabular}{llr}
+			\textbf{Name}   & \textbf{Club}  & \textbf{\begin{tabular}[c]{@{}r@{}}Contract duration\\ (in years)\end{tabular}} \\ \hline
+			Arjen Robben    & Bayern München & 2.3                                                                             \\
+			Virgil van Dijk & Celtic         & 1.2                                                                             \\
+			Joel Veltman    & Ajax Amsterdam & 4.5                                                                             \\
+			Kasper Dolberg  & Ajax Amsterdam & 0.5                                                                            
+		\end{tabular}
+	\end{table}
+	
+	There is another way to present tables in a \LaTeX\ generated document. As you can see in Table \ref{footballplayers}, there are currently four football players in the table. The position of this table has been carefully chosen, so that it would not interfere with this very important text about not much at all. There could be plenty of other useful information very close connected to the information written in this paragraph. However, in this particular case that is not the case.\\
+	If something were to be inserted in a table in section 1, the number of the referenced table in this paragraph would have changed accordingly. This helps the writer not to bother with table numbers, every time a new table is created.
+\newpage
+\subsection{Graphics}
+	There is a way to display graphics through several \LaTeX\ packages. The basic idea is to draw some lines, as illustrated in the next graphical representation of something: \bigbreak
+	\begin{tikzpicture}
+		\node [black] at (0,1) {C};
+		\draw [->, ultra thick] (0.5,1) -- (1.75,1);
+		\draw [ultra thick] (0.5, 0.8) -- (0.5,1.2);
+		\draw (1.75,0.6) rectangle (3,1.4);
+		\node [black] at (2.375,1) {4};
+		\draw (3,0.6) rectangle (3.75,1.4);
+		\draw [->, ultra thick] (3.375,1) -- (5,1);
+		\draw [ultra thick] (3.375, 0.8) -- (3.375,1.2);
+		
+		\draw (5,0.6) rectangle (6.25,1.4);
+		\node [black] at (5.625,1) {6};
+		\draw (6.25,0.6) rectangle (7,1.4);
+		\draw [->, ultra thick] (6.625,1) -- (8.375,1);
+		\draw [ultra thick] (6.625, 0.8) -- (6.625,1.2);
+		
+		\draw (8.375,0.6) rectangle (9.625,1.4);
+		\node [black] at (9,1) {6};
+		\draw (9.625,0.6) rectangle (10.375,1.4);
+		\node [black] at (10,1) {Nil};
+	\end{tikzpicture} \\
+
+	NEED TO DO A PICTURE HERE CREATED WITH HELP LINES, SUCH AS A FOOTBALL OR SOMETHING
+	
+\end{document}
