@@ -8,12 +8,13 @@ import java.util.Scanner;
 public class ShortName {
     public static void main(String[] args) {
         System.out.print("Please enter your first name: ");
-        Scanner inputFirstName = new Scanner(System.in);
-        String firstName = inputFirstName.nextLine();
+        Scanner sc = new Scanner(System.in);
+        String firstName = sc.nextLine();
         System.out.print("Please enter your last name: ");
-        Scanner inputLastName = new Scanner(System.in);
-        String lastName = inputLastName.nextLine();
-        System.out.print(firstName.charAt(0) + ". ");
+        String lastName = sc.nextLine();
+        System.out.print(firstName.charAt(0) + ". " + lastName.substring(0,4));
+
+        sc.close();
 
         /*
         If the last name has less than 4 characters, errors are given, because
@@ -22,14 +23,14 @@ public class ShortName {
         To fix, uncomment the following:
         */
   //      if(lastName.length() > 4) {
-            for(int i=0;i<4;i++) {
-                System.out.print(lastName.charAt(i));
+//            for(int i=0;i<4;i++) {
+//                System.out.print(lastName.charAt(i));
   //          }
   //      } else {
   //          for(int j=0;j<lastName.length();j++) {
   //              System.out.print(lastName.charAt(j));
   //          }
-        }
+//        }
     }
 }
 
