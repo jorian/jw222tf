@@ -8,10 +8,10 @@ import java.util.Random;
 public class TelephoneNumber {
     public static void main(String[] args) {
         Random digits = new Random();
-        String telephoneNumber = "0704-" + String.format("%s", digits.nextInt(9) + 1);
-        for (int i = 0; i < 5; i++) {
-            telephoneNumber += String.format("%s", digits.nextInt(9));
-        }
+        String telephoneNumber = "0704-" + String.format("%s", digits.nextInt(900000) + 1);
+//        for (int i = 0; i < 5; i++) {
+//            telephoneNumber += String.format("%s", digits.nextInt(9));
+//        }
         System.out.println("Random telephone number: " + telephoneNumber);
     }
 }
