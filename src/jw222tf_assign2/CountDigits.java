@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class CountDigits {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter a big number: ");
+        System.out.print("Enter a large, positive integer: ");
         String numbers = sc.nextLine();
         int temp=0,zero=0, odd=0, even=0;
 
@@ -22,6 +22,6 @@ public class CountDigits {
                 odd++;
             }
         }
-        System.out.print("Zero's: "+zero+"\tOdds: "+odd+"\tEvens: "+even);
+        System.out.print("Zeros: \t"+zero+"\nOdds: \t"+odd+"\nEvens:\t"+even);
     }
 }
