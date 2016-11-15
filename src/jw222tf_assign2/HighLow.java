@@ -15,19 +15,6 @@ public class HighLow {
         int tries = 1;
         int input = sc.nextInt();
 
-//        for (int i = 0;i<10;i++) {
-//            if (input == random) {
-//                System.out.println("The correct number is indeed: " + random + ". Guessed correctly after " + (tries) + " tries!");
-//                break;
-//            } else if (input > random) {
-//                System.out.println("lower");
-//            } else {
-//                System.out.println("higher");
-//            }
-//            //System.out.print("Please enter a number to check: ");
-//            //input = sc.nextInt();
-//        }
-
         while (true) {
             if (tries < 10) {
                 tries++;
