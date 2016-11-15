@@ -9,46 +9,44 @@ import java.util.Scanner;
 public class HighLow {
     public static void main(String[] args) {
         Random rand = new Random();
+        System.out.print("Please enter a number to check: ");
         Scanner sc = new Scanner(System.in);
         int random = rand.nextInt(99);
         int tries = 1;
-        int input;
+        int input = sc.nextInt();
 
-        for (int i = 0;i<10;i++) {
-            System.out.print("Please enter a number to check: ");
-            input = sc.nextInt();
-            if (input == random) {
-                System.out.println("The correct number is indeed: " + random + ". Guessed correctly after " + (tries) + " tries!");
-                break;
-            } else if (input > random) {
-                System.out.println("lower");
-            } else {
-                System.out.println("higher");
-            }
-            //System.out.print("Please enter a number to check: ");
-            //input = sc.nextInt();
-        }
+//        for (int i = 0;i<10;i++) {
+//            if (input == random) {
+//                System.out.println("The correct number is indeed: " + random + ". Guessed correctly after " + (tries) + " tries!");
+//                break;
+//            } else if (input > random) {
+//                System.out.println("lower");
+//            } else {
+//                System.out.println("higher");
+//            }
+//            //System.out.print("Please enter a number to check: ");
+//            //input = sc.nextInt();
+//        }
 
-
-       /*
-        while ((input != random) && (tries < 10)) {
-            tries++;
+        while (true) {
             if (tries < 10) {
+                tries++;
                 if (input > random) {
                     System.out.println("lower");
-                } else {
+                } else if (input < random) {
                     System.out.println("higher");
+                } else {
+                    System.out.println("The correct number is indeed: " + random + ". Guessed correctly after " + (tries - 1) + " tries!");
+                    break;
                 }
                 System.out.print("Please enter a number to check: ");
                 input = sc.nextInt();
-            }
-            else {
-                System.out.println("Unfortunately, you failed to guess within 10 tries!");
+            } else {
+                System.out.println("You failed to guess within 10 times.");
                 break;
             }
         }
-        System.out.println("The correct number is indeed: " + random + ". Guessed correctly after " + (tries) + " tries!"); */
     }
 }
 
-//Actually, if the user is smart, he doesn't need a limit at 10 tries. He can always guess a number < 100 within 10 tries.
+//Actually, a limit to 10 isn't needed. if the user is smart, he can always guess a number < 100 within 10 tries.
