@@ -13,9 +13,7 @@ public class Palindrome {
         inputString = inputString.replaceAll("\\W+","");
         boolean palindrome = true;
 
-
         for (int i = 0; i<inputString.length() / 2;i++) {
-            //if (inputString.charAt(i)))// .equals(Character.toLowerCase(valueOf(inputString.charAt((inputString.length() - 1) - i)))) ) {
             if (!String.valueOf(inputString.charAt(i)).toLowerCase().equals(String.valueOf(inputString.charAt((inputString.length() - 1) - i)).toLowerCase())) {
                 palindrome = false;
             }
