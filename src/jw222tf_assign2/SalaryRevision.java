@@ -22,6 +22,7 @@ public class SalaryRevision {
         }
         Collections.sort(intList);
         sum = intList.stream().mapToInt(Integer::intValue).sum();
+        //median:
         average = sum / intList.size();
         System.out.println(intList +"\n" + average);
     }
