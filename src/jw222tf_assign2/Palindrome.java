@@ -14,13 +14,14 @@ public class Palindrome {
         boolean palindrome = true;
 
         for (int i = 0; i<inputString.length() / 2;i++) {
-            if (!String.valueOf(inputString.charAt(i)).toLowerCase().equals(String.valueOf(inputString.charAt((inputString.length() - 1) - i)).toLowerCase())) {
+            if (!String.valueOf(inputString.charAt(i)).toLowerCase().equals(
+                    String.valueOf(inputString.charAt((inputString.length() - 1) - i)).toLowerCase())) {
                 palindrome = false;
             }
         }
         System.out.println(palindrome ? "It is a palindrome!" : "NOT a palindrome.");
     }
-}
+
 
 // Some Dutch palindromes:
 
