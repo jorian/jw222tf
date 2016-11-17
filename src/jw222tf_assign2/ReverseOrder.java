@@ -25,6 +25,7 @@ public class ReverseOrder {
             else
                 break;
         }
+        sc.close();
         System.out.println(intList);
         Collections.reverse(intList); //I'm lazy.
         System.out.println(intList);
