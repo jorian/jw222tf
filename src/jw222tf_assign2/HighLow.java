@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
  * Created by Jorian on 13-11-2016 at 15:55.
  */
-public class HighLow {
+public class    HighLow {
     public static void main(String[] args) {
         Random rand = new Random();
         System.out.print("Please enter a number to check: ");

@@ -8,8 +8,8 @@ public class Reverse {
         char[] text = { '!', 'y', 's', 'a', 'E', ' ', 's', 'a', 'w', ' ',
                 's', 'i', 'h', 'T' };
 
-        for (int i=0;i<text.length;i++) {
-            System.out.print(String.valueOf(text[i]));
+        for (char c : text) {
+            System.out.print(c);
         }
 
         char temp;
@@ -23,9 +23,7 @@ public class Reverse {
         System.out.println();
 
         for (char c : text) {
-            System.out.print(c);        }
-
-
-        // Continue here ...
+            System.out.print(c);
+        }
     }
 }
