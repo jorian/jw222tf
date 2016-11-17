@@ -10,10 +10,10 @@ public class Palindrome {
         Scanner sc = new Scanner(System.in);
         System.out.print("Please enter a string of text: ");
         String inputString = sc.nextLine();
-        inputString = inputString.replaceAll("\\W+","");
+        inputString = inputString.replaceAll("\\W+", "");
         boolean palindrome = true;
 
-        for (int i = 0; i<inputString.length() / 2;i++) {
+        for (int i = 0; i < inputString.length() / 2; i++) {
             if (!String.valueOf(inputString.charAt(i)).toLowerCase().equals(
                     String.valueOf(inputString.charAt((inputString.length() - 1) - i)).toLowerCase())) {
                 palindrome = false;
@@ -21,7 +21,7 @@ public class Palindrome {
         }
         System.out.println(palindrome ? "It is a palindrome!" : "NOT a palindrome.");
     }
-
+}
 
 // Some Dutch palindromes:
 
