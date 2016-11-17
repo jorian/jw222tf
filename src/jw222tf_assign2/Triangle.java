@@ -19,19 +19,13 @@ public class Triangle {
                 sb.append(" ");
             }
             for (int i = (input); i > 0; i--) {
-                sb.replace(i-1,i,"*");
+                sb.replace(i - 1, i, "*");
                 System.out.println(sb);
             }
-        } else {
-            System.out.println("The number is not an odd number.");
-        }
-
-        if ((input%2) != 0) {
             for (int i = 0; i < input; i++) {
                 if (i == input / 2) {
                     sb2.append("*");
-                }
-                else {
+                } else {
                     sb2.append(" ");
                 }
             }
@@ -39,10 +33,13 @@ public class Triangle {
             for (int i = (input / 2) - 1; i >= 0; i--) {
                 position = (input / 2);
                 count++;
-                sb2.replace((position + count),position + count + 1,"*");
-                sb2.replace((position - count),position - count + 1,"*");
+                sb2.replace((position + count), position + count + 1, "*");
+                sb2.replace((position - count), position - count + 1, "*");
                 System.out.println(sb2);
             }
+        }
+        else {
+            System.out.println("The number is not an odd number.");
         }
     }
 }
