@@ -20,6 +20,13 @@ public class FrequencyTable {
             diceValue = rand.nextInt(6);
             intList.set(diceValue, (int) intList.get(diceValue)+1);
         }
+
+        for (int i=1; i<7; i++) {
+            //Print 1. first array thingie.
+        }
+
+
         System.out.println(intList);
+
     }
 }
