@@ -9,16 +9,16 @@ import java.util.Scanner;
 public class    HighLow {
     public static void main(String[] args) {
         Random rand = new Random();
-        System.out.print("Please enter a number to check: ");
         Scanner sc = new Scanner(System.in);
         int random = rand.nextInt(100) + 1;
-        int tries = 1;
-        int input = sc.nextInt();
+        int input, tries = 1;
 
         System.out.println(random);
         while (true) {
             if (tries <= 10) {
                 tries++;
+                System.out.print("Please enter a number to check: ");
+                input = sc.nextInt();
                 if (input > random) {
                     System.out.println("lower");
                 } else if (input < random) {
@@ -27,8 +27,6 @@ public class    HighLow {
                     System.out.println("The correct number is indeed: " + random + ". Guessed correctly after " + (tries - 1) + " tries!");
                     break;
                 }
-                System.out.print("Please enter a number to check: ");
-                input = sc.nextInt();
             } else {
                 System.out.println("You failed to guess within 10 times.");
                 break;
