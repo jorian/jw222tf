@@ -14,7 +14,8 @@ public class ReverseOrder {
         System.out.println("Please enter positive integers. End by entering a negative integer.");
         int temp, tries = 0;
         ArrayList<Integer> intList = new ArrayList<Integer>();
-
+        // I do this, because in this case I wouldn't have to ask for 'temp' twice. Once inside the loop
+        // and once before the loop starts, because temp is used in the condition.
         while(true){
             System.out.print("Integer " + (tries + 1) + ": ");
             temp = sc.nextInt();
@@ -27,7 +28,7 @@ public class ReverseOrder {
         }
         sc.close();
         System.out.println(intList);
-        Collections.reverse(intList); //I'm lazy.
+        Collections.reverse(intList); //I'm lazy. I could have used the Reverse.java thing here.
         System.out.println(intList);
     }
 }
