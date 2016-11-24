@@ -15,6 +15,8 @@ public class CountA {
         String lineText = sc.nextLine();
 
         for (int k = 0; k < lineText.length(); k++) {
+            //Instead of setting it to variable string, make it directly compare the character.
+
             s = String.valueOf(lineText.charAt(k));
             if (s.equals("A")) {
                 aBig++;

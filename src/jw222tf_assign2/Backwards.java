@@ -9,7 +9,7 @@ import java.util.logging.Logger;
  */
 public class Backwards {
     public static void main(String[] args) {
-        Logger.getGlobal().setLevel(Level.OFF);
+        //Logger.getGlobal().setLevel(Level.OFF);
         Scanner sc = new Scanner(System.in);
         System.out.print("Please give a string text: ");
         String inputText = sc.nextLine();
@@ -18,9 +18,9 @@ public class Backwards {
         StringBuilder dest = new StringBuilder(len);
 
         for (i = (len - 1); i >= 0; i--){ //this way the iteration starts at the end of the given string.
-            Logger.getGlobal().info("Test");
+            //Logger.getGlobal().info("Test");
             dest.append(inputText.charAt(i));
         }
-        System.out.println(dest);
+        System.out.println(dest); //printing a stringbuilder is ok , right?
     }
 }

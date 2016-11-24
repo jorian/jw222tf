@@ -11,12 +11,13 @@ public class    HighLow {
         Random rand = new Random();
         System.out.print("Please enter a number to check: ");
         Scanner sc = new Scanner(System.in);
-        int random = rand.nextInt(99);
+        int random = rand.nextInt(100) + 1;
         int tries = 1;
         int input = sc.nextInt();
 
+        System.out.println(random);
         while (true) {
-            if (tries < 10) {
+            if (tries <= 10) {
                 tries++;
                 if (input > random) {
                     System.out.println("lower");

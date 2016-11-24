@@ -10,9 +10,9 @@ public class LargestK {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Please enter a number: ");
-
         int k=0,l=0, input = sc.nextInt();
 
+        //if condition inside while statement
         while(true) {
             if((k + (l + 2)) < input) {
                 l += 2;
