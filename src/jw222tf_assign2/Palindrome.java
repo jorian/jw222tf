@@ -50,3 +50,5 @@ public class Palindrome {
 // Dromedaren Alpotto planerade mord
 // Medan ammor tre i Floda nakna ses aga lam i Malaga ses ankan Adolf i ert rom mana dem
 //"A1 n2%}=3N{[a]"
+
+//(inputText.matches("[0-9]+") && )
