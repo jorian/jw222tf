@@ -19,7 +19,7 @@ public class CountDigits {
                 temp = numbers.charAt(i);
                 if (temp == 0) {
                     zero++;
-                } else if(temp%2==0) {
+                } else if (temp%2==0) {
                     even++;
                 } else {
                     odd++;
