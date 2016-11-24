@@ -13,12 +13,12 @@ public class ReverseOrder {
         Scanner sc = new Scanner(System.in);
         System.out.println("Please enter positive integers. End by entering a negative integer.");
         int temp, tries = 0;
-        List<Integer> intList = new ArrayList<>();
+        ArrayList<Integer> intList = new ArrayList<Integer>();
 
         while(true){
             System.out.print("Integer " + (tries + 1) + ": ");
             temp = sc.nextInt();
-            if (temp > 1) {
+            if (temp > 0) {
                 intList.add(tries, temp);
                 tries++;
             }

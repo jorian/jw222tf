@@ -13,9 +13,9 @@ public class Palindrome {
         inputString = inputString.replaceAll("\\W+", "");
         boolean palindrome = true;
 
-        for (int i = 0; i < inputString.length() / 2; i++) {
+        for (int i = 0; i < inputString.length() / 2; i++) { //one big check for checking if going backwards is the same thing
             if (!String.valueOf(inputString.charAt(i)).toLowerCase().equals(
-                    String.valueOf(inputString.charAt((inputString.length() - 1) - i)).toLowerCase())) {
+                    String.valueOf(inputString.charAt((inputString.length() - 1) - i)).toLowerCase())) { //maybe use isLetter(input)
                 palindrome = false;
             }
         }
