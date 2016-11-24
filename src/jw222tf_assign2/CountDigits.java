@@ -13,7 +13,7 @@ public class CountDigits {
         int temp=0,zero=0, odd=0, even=0;
 
         for(int i = 0;i < numbers.length();i++) {
-            temp = (numbers.charAt(i) - '0');
+            temp = (numbers.charAt(i) - '0'); //why did i use a '0'? > get numericalvalue
             if (temp == 0) {
                 zero++;
             } else if(temp%2==0) {
