@@ -9,12 +9,12 @@ public class Palindrome {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Please enter a string of text: ");
-        String chckString = "", inputString = sc.nextLine();
+        String checkString, inputString = sc.nextLine();
         /*
         the regular expression \\P{L}+ removes everything from a string
         except for letters and typical Swedish letters like ä, ö and é.
         */
-        chckString = inputString.replaceAll("\\P{L}+", "");
+        checkString = inputString.replaceAll("\\P{L}+", "");
         boolean palindrome = true; //Every string will be a palindrome, unless the code below proves otherwise.
 
         /*
@@ -26,18 +26,17 @@ public class Palindrome {
         Also, I could have made a while statement which would stop the moment it knew the string wasn't
         a palindrome anymore, so it wouldn't have to do any useless things after knowing it wouldn't be a palindrome.
          */
-        for (int i = 0; i < chckString.length() / 2; i++) {
+        for (int i = 0; i < checkString.length() / 2; i++) {
             // By iterating through the string:
             // if the first letter of the string is NOT equals the last letter of the string,
             // Palindrome will become false.
-
-            if (!String.valueOf(chckString.charAt(i)).toLowerCase().equals(
-                    String.valueOf(chckString.charAt((chckString.length() - 1) - i)).toLowerCase())) { //maybe use isLetter(input)
+            if (!String.valueOf(checkString.charAt(i)).toLowerCase().equals(
+                    String.valueOf(checkString.charAt((checkString.length() - 1) - i)).toLowerCase())) { //maybe use isLetter(input)
                 palindrome = false;
             }
         }
         System.out.println(palindrome ? "It is a palindrome!" : "NOT a palindrome.");
-        System.out.println(chckString);
+        System.out.println(checkString);
     }
 }
 

@@ -13,19 +13,22 @@ public class CountA {
 
         System.out.print("Please enter a string text: ");
         String lineText = sc.nextLine();
+        sc.close();
 
         for (int k = 0; k < lineText.length(); k++) {
             //Instead of setting it to variable string, make it directly compare the character.
-
             s = String.valueOf(lineText.charAt(k));
-            if (s.equals("A")) {
-                aBig++;
-            }
-            else if (s.equals("a")) {
-                aSmall++;
+            switch (s) {
+                case "A":
+                    aBig++;
+                    break;
+                case "a":
+                    aSmall++;
+                    break;
             }
         }
         System.out.println("The number of A's: " + aBig);
         System.out.println("The number of a's: " + aSmall);
+
     }
 }
