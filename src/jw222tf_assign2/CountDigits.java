@@ -9,7 +9,7 @@ public class CountDigits {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter a large, positive integer: ");
-        String numbers = sc.nextLine();
+        String numbers = sc.nextLine();                             //what if it is negative
         int temp=0,zero=0, odd=0, even=0;
 
         for(int i = 0;i < numbers.length();i++) {

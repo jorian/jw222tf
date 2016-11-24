@@ -2,6 +2,8 @@ package jw222tf_assign2;
 
 import java.util.Scanner;
 
+//THIS IS GOING TO BE TEST STUFF
+
 /**
  * Created by Jorian on 15-11-2016 at 13:44.
  */
