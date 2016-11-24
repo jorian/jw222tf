@@ -12,16 +12,10 @@ public class LargestK {
         System.out.print("Please enter a number: ");
         int k=0,l=0, input = sc.nextInt();
 
-        //if condition inside while statement
-        while(true) {
-            if((k + (l + 2)) < input) {
-                l += 2;
-                k += l;
-            }
-            else {
-                break;
-            }
+        while(((k + (l + 2)) < input)) {
+            l += 2;
+            k += l;
         }
-        System.out.println(l);
+        System.out.println("The largest K such that 0+2+4+6+...+K < " + input + " => K=" + l);
     }
 }
