@@ -10,10 +10,12 @@ public class    HighLow {
     public static void main(String[] args) {
         Random rand = new Random();
         Scanner sc = new Scanner(System.in);
-        int random = rand.nextInt(100) + 1;
-        int input, tries = 1;
+        //0-99 + 1 = 1-100.
+        //The assignment is unclear though. 'Between 1-100' implies number 2 until 99.
+        int input, tries = 1, random = rand.nextInt(100) + 1;
 
-        System.out.println(random);
+        //A while loop is used, in order to have an if statement within counting the tries. If it's more than 10,
+        //a message is printed. I was struggling with this a lot.
         while (true) {
             if (tries <= 10) {
                 tries++;
@@ -32,7 +34,8 @@ public class    HighLow {
                 break;
             }
         }
+        sc.close();
     }
 }
 
-//Actually, a limit to 10 isn't needed. if the user is smart, he can always guess a number < 100 within 10 tries.
+//Actually, a limit to 10 isn't needed. if the user is smart, he can always guess a number <= 100 within 10 tries.
