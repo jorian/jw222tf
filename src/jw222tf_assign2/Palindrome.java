@@ -12,7 +12,7 @@ public class Palindrome {
         String checkString, inputString = sc.nextLine();
         /*
         the regular expression \\P{L}+ removes everything from a string
-        except for letters and typical Swedish letters like ä, ö and é.
+        except for letters, including typical Swedish letters like ä, ö and é.
         */
         checkString = inputString.replaceAll("\\P{L}+", "");
         boolean palindrome = true; //Every string will be a palindrome, unless the code below proves otherwise.
