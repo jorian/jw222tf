@@ -14,7 +14,7 @@ public class SalaryRevision {
         System.out.println("Please give salaries. End with X");
         String inputText = sc.next();
         int median, half, average, gap, iter = 0;
-        double sum = 0, doublemedian = 0;
+        double sum = 0;
 
         while (inputText.matches("[0-9]+") | (!inputText.toLowerCase().equals("x"))) { //isalphanumeric
             intList.add(iter, Integer.valueOf(inputText));
@@ -22,6 +22,7 @@ public class SalaryRevision {
             inputText = sc.next();
         }
         sc.close();
+
         if (intList.size() > 0) {
             // sort the list in order to get the right median:
             Collections.sort(intList);
@@ -41,7 +42,6 @@ public class SalaryRevision {
                 median = (int) Math.round((intList.get(half - 1) + intList.get(half)) / 2.0);
             } else
                 median = (intList.get(half));
-            //average = (int) (sum) / intList.size(); // round this correctly
             average = (int) Math.round(sum / intList.size()); // round this correctly
             gap = intList.get(intList.size() - 1) - intList.get(0);
             System.out.println("Ordered set: " + intList + "\nMedian: " + median + "\nAverage: " + average
@@ -49,7 +49,3 @@ public class SalaryRevision {
         }
     }
 }
-
-//22100 29800 27300 25400 23100 22300 x
-//21700 28200 26300 25100 22600 22800 19900 X
-//1 2 3 4 x

@@ -7,14 +7,14 @@ import java.util.Scanner;
 /**
  * Created by JorianWielink on 17/11/2016.
  */
-public class SalaryTryout {
+public class SalaryTry {
     public static void main(String[] args){
         ArrayList<Integer> intList = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
         System.out.println("Please give salaries. End with X");
         String inputText = sc.next();
         int median, half, average, gap, iter = 0;
-        double sum = 0, doublemedian = 0;
+        double sum = 0;
 
         try {
             while (inputText.matches("[0-9]+") | (!inputText.toLowerCase().equals("x"))) { //isalphanumeric
@@ -53,7 +53,3 @@ public class SalaryTryout {
         }
     }
 }
-
-//22100 29800 27300 25400 23100 22300 x
-//21700 28200 26300 25100 22600 22800 19900 X
-//1 2 3 4 x
