@@ -24,10 +24,3 @@ public class SecondLargest{
         System.out.println("The second largest number: " + secondMax);
     }
 }
-
-// -150 200 645 5637 3423 846 20 1556 -980 5
-// 67 -468 36 1345 -7778 0 34 7654 45 -666
-// 1 2 3 4 5 6 7 8 9 10
-// 10 9 8 7 6 5 4 3 2 1
-// 5 4 6 3 7 2 8 1 9 10
-// 5 6 7 8 9 10 1 2 3 4
