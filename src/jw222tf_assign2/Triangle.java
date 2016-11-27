@@ -17,13 +17,19 @@ public class Triangle {
         int count = 0, position;
 
         if ((input%2) != 0) {
+            // First I create a simple string with spaces, with input as its length.
             for (int i = 0; i <= input; i++) {
                 sb.append(" ");
             }
+
+            // Then I start at the end of that string and replace the spaces one by one with an asterisk.
             for (int i = (input); i > 0; i--) {
                 sb.replace(i - 1, i, "*");
                 System.out.println(sb);
             }
+            System.out.println("\nIsosceles triangle:");
+            // This is the first line of the Isosceles triangle. I again make a string with input as its length,
+            // but this time if the iteration is equal to input divided by 2, I place an asterisk, as center of the triangle.
             for (int i = 0; i < input; i++) {
                 if (i == input / 2) {
                     sb2.append("*");
@@ -31,6 +37,8 @@ public class Triangle {
                     sb2.append(" ");
                 }
             }
+
+            // Here I start an iteration, and replace the space with an a asterisk half way the string, + and - the iteration.
             System.out.println(sb2);
             for (int i = (input / 2) - 1; i >= 0; i--) {
                 position = (input / 2);
