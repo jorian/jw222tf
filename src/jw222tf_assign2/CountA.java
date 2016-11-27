@@ -16,7 +16,6 @@ public class CountA {
         sc.close();
 
         for (int k = 0; k < lineText.length(); k++) {
-            //Instead of setting it to variable string, make it directly compare the character.
             s = String.valueOf(lineText.charAt(k));
             switch (s) {
                 case "A":
