@@ -11,7 +11,7 @@ public class    HighLow {
         Random rand = new Random();
         Scanner sc = new Scanner(System.in);
         //0-99 + 1 = 1-100.
-        //The assignment is unclear though. 'Between 1-100' implies number 2 until 99.
+        //The assignment is unclear though. 'Between 1-100' implies number 2 up to and including 99.
         int input, tries = 1, random = rand.nextInt(100) + 1;
 
         //A while loop is used, in order to have an if statement within counting the tries. If it's more than 10,
