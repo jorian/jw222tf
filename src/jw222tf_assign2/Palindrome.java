@@ -27,28 +27,16 @@ public class Palindrome {
         a palindrome anymore, so it wouldn't have to do any useless things after knowing it wouldn't be a palindrome.
          */
         for (int i = 0; i < checkString.length() / 2; i++) {
-            // By iterating through the string:
-            // if the first letter of the string is NOT equals the last letter of the string,
-            // Palindrome will become false.
+            /*
+            By iterating through the string:
+            if the first letter of the string is NOT equals the last letter of the string,
+            Palindrome will become false.
+            */
             if (!String.valueOf(checkString.charAt(i)).toLowerCase().equals(
-                    String.valueOf(checkString.charAt((checkString.length() - 1) - i)).toLowerCase())) { //maybe use isLetter(input)
+                    String.valueOf(checkString.charAt((checkString.length() - 1) - i)).toLowerCase())) {
                 palindrome = false;
             }
         }
         System.out.println(palindrome ? "It is a palindrome!" : "NOT a palindrome.");
-        System.out.println(checkString);
     }
 }
-
-// Some Dutch palindromes:
-
-// 'De mooie zeeman nam Anna mee', zei oom Ed
-// De racecar, Ed
-// droomnepparterreserretrappenmoord
-
-// or Swedish:
-// Dromedaren Alpotto planerade mord
-// Medan ammor tre i Floda nakna ses aga lam i Malaga ses ankan Adolf i ert rom mana dem
-//"A1 n2%}=3N{[a]"
-
-//(inputText.matches("[0-9]+") && )
