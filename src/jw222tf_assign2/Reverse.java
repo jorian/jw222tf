@@ -21,7 +21,7 @@ public class Reverse {
             text[right] = temp;
         }
 
-        System.out.println(); //to put the two below each other.
+        System.out.println(); //to put the two lines of text below each other.
 
         for (char c : text) {
             System.out.print(c);
