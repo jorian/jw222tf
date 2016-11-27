@@ -12,7 +12,7 @@ public class LargestK {
         System.out.print("Please enter a number: ");
         int k=0,l=0, input = sc.nextInt();
 
-        while(((k + (l + 2)) < input)) {
+        while((k + (l + 2)) < input) {
             l += 2;
             k += l;
         }
