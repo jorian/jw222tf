@@ -51,8 +51,21 @@ public class Arrays {
             int temp = reversedArr[left];
             reversedArr[left] = reversedArr[right];
             reversedArr[right] = temp;
+            left++;
+            right--;
         }
         return reversedArr;
     }
 
+    private static boolean hasN(int[] arr, int n) {
+        boolean hasN = false;
+        for (int anArr : arr){
+            if (anArr == n) {
+                hasN = true;
+            }
+        }
+        return hasN;
+    }
+
+    private static replaceAll
 }
