@@ -7,27 +7,31 @@ import java.util.ArrayList;
  */
 public class Arrays {
     public static void main(String[] args) {
-        int[] array = {1, 2, 3, 5, 6, 7, 8};
+        int[] array = {1, 4, 3, 1, 2, 3, 5, 1, 6, 7, 8};
         System.out.println(sum(array));
 
         String str = toString(array);
         System.out.println("n = " + str);
 
-        str = toString(addN(array, 2));
-        System.out.println("n = " + str);
+        //str = toString(addN(array, 2));
+        //System.out.println("n = " + str);
 
         Arrays.toString(array);
 
+        int[] subarray = {1, 2, 3};
+        System.out.println(hasSubsequence(array, subarray));
+
     }
+
     private static int sum(int[] arr) {
         int added = 0;
-        for (int i = 0;i < arr.length;i++) {
+        for (int i = 0; i < arr.length; i++) {
             added += arr[i];
         }
         return added;
     }
 
-    public static String toString(int[] arr){
+    public static String toString(int[] arr) {
         StringBuilder text = new StringBuilder();
         for (int anArr : arr) {
             text.append(anArr + ", ");
@@ -38,7 +42,7 @@ public class Arrays {
 
     private static int[] addN(int[] arr, int n) {
         int[] tempNumbers = arr;
-        for (int i = 0; i<tempNumbers.length; i++) {
+        for (int i = 0; i < tempNumbers.length; i++) {
             tempNumbers[i] += n;
         }
         return tempNumbers;
@@ -59,7 +63,7 @@ public class Arrays {
 
     private static boolean hasN(int[] arr, int n) {
         boolean hasN = false;
-        for (int anArr : arr){
+        for (int anArr : arr) {
             if (anArr == n) {
                 hasN = true;
             }
@@ -67,5 +71,26 @@ public class Arrays {
         return hasN;
     }
 
-    private static replaceAll
+    private static void replaceAll(int[] arr, int old, int nw) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == old) {
+                arr[i] = nw;
+            }
+        }
+    }
+
+    private static boolean hasSubsequence(int[] arr, int[] sub) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == sub[0]) {
+                String str2 = java.util.Arrays.toString(sub);
+                str2 = str2.substring(1, str2.length()-1);
+                String str1 = toString(arr);
+                str1 = str1.substring(i * 3, (i * 3 + str2.length()));
+                if (str1.equals(str2)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }
