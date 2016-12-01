@@ -21,6 +21,8 @@ public class Arrays {
         int[] subarray = {1, 2, 3};
         System.out.println(hasSubsequence(array, subarray));
 
+        System.out.println(toString(sort(array)));
+
     }
 
     private static int sum(int[] arr) {
@@ -79,16 +81,39 @@ public class Arrays {
         }
     }
 
-    private static int[] sort(int[] arr) { //TODODODODODODODODODDOODDODO
+    private static int[] sort(int[] arr) {
         int[] temp = arr;
-        //for (int i=0;i < temp.length;i++) {
-
-        //}
+        for(int i=0;i <= temp.length-1;i++) {
+            for(int j=0;j <= temp.length-2;j++) {
+                if(temp[j] > temp[j + 1]) {
+                    int tempint = 0;
+                    tempint = temp[j];
+                    temp[j] = temp[j+1];
+                    temp[j+1] = tempint;
+                }
+            }
+        }
         return temp;
     }
 
 
     private static boolean hasSubsequence(int[] arr, int[] sub) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == sub[0]) {
+                int[] temp = new int[sub.length];
+                for (int j=0;j<sub.length;j++) {
+                    temp[j] = arr[i+j];
+                }
+                // The following took me a while to figure out.
+                if (java.util.Arrays.equals(temp, sub)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    /*private static boolean hasSubsequence(int[] arr, int[] sub) {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == sub[0]) {
                 String str2 = java.util.Arrays.toString(sub);
@@ -101,5 +126,5 @@ public class Arrays {
             }
         }
         return false;
-    }
+    }*/
 }
