@@ -7,7 +7,7 @@ public class SweID {
     public static void main(String[] args) {
         String idNumber1 = "911029-3249";
         String idNumber2 = "640123-8826";
-        String idNumber3 = "550414-0913";
+        String idNumber3 = "551414-0913";
 
         System.out.println(getFirstPart(idNumber1));
         System.out.println(getLastPart(idNumber2));
@@ -47,14 +47,16 @@ public class SweID {
     //date correct (y, m, d)
     //last part is correct according to rules on wikipedia.
     private static boolean isCorrect(String idNumber) {
-        boolean checksumCheck = false;
+        boolean monthCheck = false, dayCheck = false, checksumCheck = false;
         int sum = 0;
         int tempInt;
         idNumber = idNumber.replaceAll("-", "");
         int monthNr = Integer.valueOf(idNumber.substring(2,4));
-        if (monthNr > 12) {
+        if (monthNr <= 12) {
+            monthCheck = true;
+        }
+        else {
             System.err.println("The month you entered is not correct.");
-            System.exit(-1);
         }
 
         int max = 0;
@@ -77,10 +79,13 @@ public class SweID {
         }
 
         int dayNr = Integer.valueOf(idNumber.substring(4, 6));
-        if (dayNr > max) {
-            System.err.println("The day you entered is incorrect.");
-            System.exit(-1);
+        if (dayNr <= max | !monthCheck) { //if monthCheck is false, a proper evaluation of dayCheck cannot be done.
+            dayCheck = true;
         }
+        else {
+            System.err.println("The day you entered is incorrect.");
+        }
+
         for (int i = 0;i < idNumber.length() - 1;i++) {
             if (Character.isDigit(idNumber.charAt(i))) {
                 tempInt = (int) idNumber.charAt(i) - '0';
@@ -108,7 +113,8 @@ public class SweID {
         if (idNumberLastDigit == lastDigit) {
             checksumCheck = true;
         }
-        return true;
+
+        return checksumCheck && dayCheck && monthCheck;
     }
 
 
