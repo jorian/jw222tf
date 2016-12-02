@@ -21,7 +21,7 @@ public class SweID {
         System.out.println("\n" + areEqual(idNumber1, idNumber2));
         System.out.println(areEqual(idNumber1, idNumber1));
 
-        System.out.println("\n" + isCorrect(idNumber1));
+        System.out.println("\n" + isCorrect(idNumber3));
     }
 
     private static String getFirstPart(String idNumber){
@@ -47,17 +47,51 @@ public class SweID {
     //date correct (y, m, d)
     //last part is correct according to rules on wikipedia.
     private static boolean isCorrect(String idNumber) {
+        boolean checksumCheck = false;
         int sum = 0;
         int tempInt;
-        for (int i = 0;i < idNumber.length();i++) {
+        idNumber = idNumber.replaceAll("-", "");
+        int monthNr = Integer.valueOf(idNumber.substring(2,4));
+        if (monthNr > 12) {
+            System.err.println("The month you entered is not correct.");
+            System.exit(-1);
+        }
+
+        int max = 0;
+        switch (monthNr) {
+            case 1:case 3:case 5:case 7:case 8:case 10: case 12 :
+                max = 31;
+                break;
+            case 2:
+                if (Integer.valueOf(idNumber.substring(0, 2)) % 4 == 0) {
+                    max = 29;
+                    break;
+                }
+                else {
+                    max = 28;
+                    break;
+                }
+            case 4:case 6:case 9:case 11 :
+                max = 30;
+                break;
+        }
+
+        int dayNr = Integer.valueOf(idNumber.substring(4, 6));
+        if (dayNr > max) {
+            System.err.println("The day you entered is incorrect.");
+            System.exit(-1);
+        }
+        for (int i = 0;i < idNumber.length() - 1;i++) {
             if (Character.isDigit(idNumber.charAt(i))) {
                 tempInt = (int) idNumber.charAt(i) - '0';
                 if (i % 2 == 0) {
-                    if ((tempInt * 2) >= 10) {
-                        sum += ((tempInt * 2) % 10);
+                    tempInt *= 2;
+                    if (tempInt >= 10) {
+                        tempInt = (tempInt / 10) + (tempInt % 10);
+                        sum += tempInt;
                     }
                     else {
-                        sum += (tempInt * 2);
+                        sum += tempInt;
                     }
                 }
                 else {
@@ -66,7 +100,14 @@ public class SweID {
             }
         }
         System.out.println("\nChecksum: " + sum);
-
+        int lastDigit = 10 - (sum % 10);
+        if (lastDigit == 10) {
+            lastDigit = 0;
+        }
+        int idNumberLastDigit = idNumber.charAt(idNumber.length() - 1) - '0';
+        if (idNumberLastDigit == lastDigit) {
+            checksumCheck = true;
+        }
         return true;
     }
 
