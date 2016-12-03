@@ -18,7 +18,7 @@ public class ShortName {
 
         /*
         If the last name has less than 4 characters, errors are given, because
-        looking up a character at a position that doesn't exist, doesn't work.
+        looking up a character at a position that doesn'TextAnalyzer exist, doesn'TextAnalyzer work.
 
         To fix, uncomment the following:
         */

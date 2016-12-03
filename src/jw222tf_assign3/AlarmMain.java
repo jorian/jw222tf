@@ -16,5 +16,6 @@ public class AlarmMain {
     }
 }
 
-//Only change I made in the AlarmClock.java was the line break type, since I am using a mac. Changed it to LF, was CRLF.
-//http://stackoverflow.com/questions/1552749/difference-between-cr-lf-lf-and-cr-line-break-types
+// Only change I made in the AlarmClock.java was the line break type, since I am using a mac.
+// Changed it to LF, was CRLF. Interesting stuff!
+// http://stackoverflow.com/questions/1552749/difference-between-cr-lf-lf-and-cr-line-break-types
