@@ -5,10 +5,7 @@ package jw222tf_assign3;
  */
 public class TextAnalyzer {
     private String text;
-    private int charCount;
-    private int upperCaseCount;
-    private int whiteSpaceCount;
-    private int digitCount;
+
 
     public TextAnalyzer(String str) {
         text = str;
@@ -58,11 +55,6 @@ public class TextAnalyzer {
     }
 
     public boolean containsString(String str) {
-        for (int i = 0; i < text.length(); i++) {
-            if (text.contains(str)) {
-                return true;
-            }
-        }
-        return false;
+        return text.contains(str);
     }
 }

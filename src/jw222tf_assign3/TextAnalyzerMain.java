@@ -11,7 +11,7 @@ public class TextAnalyzerMain {
         System.out.println("Char Count: "+ ta.charCount());
         System.out.println("Upper Case Count: "+ ta.upperCaseCount());
         System.out.println("Whitespace Count: "+ ta.whiteSpaceCount());
-        System.out.println("Digit Count "+ ta.digitCount());
+        System.out.println("Digit Count: "+ ta.digitCount());
 
         if (ta.containsChar('x'))
             System.out.println("The text contains char \'x\'");
