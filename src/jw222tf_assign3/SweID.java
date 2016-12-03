@@ -10,17 +10,17 @@ public class SweID {
         String idNumber2 = "640123-8826";
         String idNumber3 = "550414-0913";
 
-        System.out.println("The first part of the idnumber: " + getFirstPart(idNumber1));
-        System.out.println("The second part of the idnumber: " + getLastPart(idNumber2));
+        System.out.println("The first part of the idnumber " + idNumber1 + ": " + getFirstPart(idNumber1));
+        System.out.println("The second part of the idnumber " + idNumber2 + ": " + getLastPart(idNumber2));
 
-        System.out.println("\nFemale number: " + isFemaleNumber(idNumber2));
-        System.out.println("Female number: " + isFemaleNumber(idNumber3));
+        System.out.println("\n" + idNumber2 + " is a female number: " + isFemaleNumber(idNumber2));
+        System.out.println(idNumber3 + " is a female number: " + isFemaleNumber(idNumber3));
 
         System.out.println("\nMale number: " + isMaleNumber(idNumber2));
         System.out.println("Male number: " + isMaleNumber(idNumber3));
 
-        System.out.println("\nAre id numbers equal: " + areEqual(idNumber1, idNumber2));
-        System.out.println("Are id numbers equal: " + areEqual(idNumber1, idNumber1));
+        System.out.println("\nAre " + idNumber1 + " & " + idNumber2 + " equal: " + areEqual(idNumber1, idNumber2));
+        System.out.println("Are " + idNumber1 + " & " + idNumber1 + " equal: " + areEqual(idNumber1, idNumber1));
 
         System.out.println(idNumber1 + " is a correct number: " + isCorrect(idNumber1));
         System.out.println(idNumber2 + " is a correct number: " + isCorrect(idNumber2));
