@@ -3,15 +3,24 @@
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,amssymb,amsthm,upref}
 \usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{listings,color}
+\lstset{language=Pascal}
+\newcommand{\summation}[2]{$$\sum_{i=0}^{#1} #2_i$$}
+
+
+
+%\graphicspath{ {C:/Users/Jorian/Pictures/} }
 \usetikzlibrary{calc, shapes.geometric, arrows}
 
 \begin{document}
-\title{Blockchain and privacy}
+\title{A paper}
 \author{(Laurens) Jorian Wielink}
 \maketitle
 \begin{abstract}
 	An abstract is a short text, written in order to describe the contents of the document. This document has been written in order to pass a course at the Linnaeus University in Växjö. To pass this course, several examples of knowledge about \LaTeX\ are given.
 \end{abstract}
+
 \newpage
 \tableofcontents
 \newpage
@@ -42,7 +51,7 @@ There are several reasons for this delicate matter:
 		\item Palatino
 		\item Times
 	\end{itemize} 
-	In order to use one of these typefaces, one must include the corresponding package in the \LaTeX\ document. This is done by using the usepackage command: \bigbreak \texttt{\textbackslash usepackage\{insert typeface here\}} \\[5mm]
+	In order to use one of these typefaces, one must include the corresponding package in the \LaTeX\ document. This is done by using the usepackage command: \bigbreak \texttt{\textbackslash usepackage\{insert typeface here\} } \\[5mm]
 	This command must be included at the top of the \LaTeX\ document.
 \subsection{Hyphenation}
 	When a sentence runs out of much needed paper space, hyphenation is used to glue a broken word together, using a dash. It usually is done automatically, but one can control the way a sentenced will be hyphenated. 
@@ -102,15 +111,101 @@ There are several reasons for this delicate matter:
 		\draw (5,0.6) rectangle (6.25,1.4);
 		\node [black] at (5.625,1) {6};
 		\draw (6.25,0.6) rectangle (7,1.4);
-		\draw [->, ultra thick] (6.625,1) -- (8.375,1);
+		\draw [->, ultra thick] (6.625,1) -- (8.25,1);
 		\draw [ultra thick] (6.625, 0.8) -- (6.625,1.2);
 		
-		\draw (8.375,0.6) rectangle (9.625,1.4);
-		\node [black] at (9,1) {6};
-		\draw (9.625,0.6) rectangle (10.375,1.4);
-		\node [black] at (10,1) {Nil};
-	\end{tikzpicture} \\
+		\draw (8.25,0.6) rectangle (9.5,1.4);
+		\node [black] at (8.875,1) {6};
+		\draw (9.5,0.6) rectangle (10.25,1.4);
+		\node [black] at (9.875,1) {Nil};
+	\end{tikzpicture}
+\subsubsection{Picture}
+	A picture is included by adding the library graphicx to the \LaTeX\ document.
+\begin{figure}[h]
+	\includegraphics[width=3cm]{Opengraph}
+	\centering
+\end{figure}
+\newpage 
+\section{Floating graphics}
+	The figures included in section 2.5 need to be floated. Like a balloon. In Figure \ref{math-something}, the figure for our mathematical something has sunk to the bottom of the page. In Figure \ref{picture}, the picture is floated as well.
+	\begin{figure}[bp!]
+		\caption{Floating mathematical something}
+		\label{math-something}
+		\centering
+		\begin{tikzpicture}
+			\node [black] at (0,1) {C};
+			\draw [->, ultra thick] (0.5,1) -- (1.75,1);
+			\draw [ultra thick] (0.5, 0.8) -- (0.5,1.2);
+			
+			\draw (1.75,0.6) rectangle (3,1.4);
+			\node [black] at (2.375,1) {4};
+			\draw (3,0.6) rectangle (3.75,1.4);
+			\draw [->, ultra thick] (3.375,1) -- (5,1);
+			\draw [ultra thick] (3.375, 0.8) -- (3.375,1.2);
+			
+			\draw (5,0.6) rectangle (6.25,1.4);
+			\node [black] at (5.625,1) {6};
+			\draw (6.25,0.6) rectangle (7,1.4);
+			\draw [->, ultra thick] (6.625,1) -- (8.25,1);
+			\draw [ultra thick] (6.625, 0.8) -- (6.625,1.2);
+			
+			\draw (8.25,0.6) rectangle (9.5,1.4);
+			\node [black] at (8.875,1) {6};
+			\draw (9.5,0.6) rectangle (10.25,1.4);
+			\node [black] at (9.875,1) {Nil};
+		\end{tikzpicture}
+	\end{figure}
+	\begin{figure}[bp!]
+		\caption{The actual image}
+		\centering
+		\label{picture}
+		\includegraphics[width=3cm]{Opengraph}
+	\end{figure}
+\newpage
+\section{Correcting errors}
+	In this section, some errors are corrected.
+\subsection{Formula}
+	The following code is given: \texttt{\$x\textasciicircum n\textasciicircum 2 + y\textasciicircum\{n + 1 = z\textasciicircum n}. Suggestions for corrections:
+	\begin{enumerate}
+		\item  The formula starts with a dollar sign, to indicate to \LaTeX\ that a mathematical formula is entered. This formula should also end with a dollar sign, to let \LaTeX\ know the end of the formula. It should look like this: \texttt{\$x\textasciicircum n\textasciicircum 2 + y\textasciicircum\{n + 1 = z\textasciicircum n\$}
+		\item  The code \texttt{\{n + 1} should be corrected to make it a group: \texttt{\{n + 1\}}
+		\item  Assuming the \texttt{2} in the first part needs to be a power of n, the code should be the following: \texttt{x\textasciicircum \{n\textasciicircum 2\}}
+	\end{enumerate}
+	Resulting in the following mathematical formula: $x^{n^2} + y^{n + 1} = z^n$
+\subsection{The Johansson Brothers}
+	Without the double h in emphh and the correct use of typing an ampersand:
+	\begin{center}
+		\emph{The Johansson Brothers \& Son}
+	\end{center}
 
-	NEED TO DO A PICTURE HERE CREATED WITH HELP LINES, SUCH AS A FOOTBALL OR SOMETHING
+\subsection{Paragraph ending}
+	.. end of a paragraph.
 	
+	A new paragraph should start with an indentation, by leaving a blank line in the \LaTeX\ code. If no indent is needed, a line break should be placed instead. However, the use of a line break does not start a new paragraph.
+\newpage
+\section{Programming code}
+	Here follows some programming code:
+	\begin{lstlisting}[firstline=2,lastline=4]
+		for i:=maxint to 0 do
+		begin
+			{ do nothing }
+		end;
+		Write(’Case insensitive ’);
+		WritE(’Pascal keywords.’);
+	\end{lstlisting}
+\section{Commands}
+	A command is created to make typesetting a mathematical function easier:
+	%\newcommand{\summation}[2]{$$\sum_{i=0}^{[#1]]} [#2]_i$$}
+	\summation{50}{\alpha}
+	\summation{10}{\gamma}
+	%$$\sum_{i=0}^{n} \alpha_i$$
+\section{Reference}
+	According to Morton \cite{Morton}
+\begin{thebibliography}{9}
+	\bibitem{Cameron} Peter J. Cameron, \emph{Permutations Groups}, Cambridge University Press,
+	Cambridge, 1999.
+	\bibitem{Morton} Patrick Morton,
+	\emph{Periods of Maps on Irreducible Polynomials over Finite Field, I}, 
+	Finite Fields and their Applications (Finite Fields Appl.) \textbf{24} (1997), no. 3, 11--24.
+\end{thebibliography}
 \end{document}
