@@ -7,6 +7,7 @@ public class Fraction {
     private int numerator;
     private int denominator;
 
+
     /*
     Constructors:
      */
@@ -15,20 +16,29 @@ public class Fraction {
         denominator = 1;
     }
 
+
+    /*
+    Since this code is the same as the method setFraction, can I just call setFraction here? Or is that dangerous?
+     */
     Fraction(int num, int denom){
-        /*
-        Since this code is the same as the method setFraction, can I just call setFraction here?
-         */
         numerator = num;
         if (denomNotZero(denom)) {
             denominator = denom;
         }
     }
 
+
+    /*
+    Converts object variables to a readable String format
+     */
+    public String toString() {
+        return numerator + "/" + denominator;
+    }
+
+
     /*
     The two get-methods:
      */
-
     public int getNumerator(){
         return numerator;
     }
@@ -36,6 +46,7 @@ public class Fraction {
     public int getDenominator() {
         return denominator;
     }
+
 
     /*
     Created a setFraction, sets numerator and denominator to inputted integers:
@@ -47,6 +58,7 @@ public class Fraction {
         }
     }
 
+
     /*
     A setFraction, sets the fraction according to an other Fraction object:
      */
@@ -54,6 +66,7 @@ public class Fraction {
         numerator = fr1.numerator;
         denominator = fr1.denominator;
     }
+
 
     /*
     Checks if the denominator is more or less than 0.
@@ -63,20 +76,16 @@ public class Fraction {
             return true;
         }
         System.err.println("The denominator must be more or less than 0.");
+        System.exit(-1);
         return false;
     }
-    /*
-    Converts object variables to a readable String format
-     */
-    public String toString() {
-        return numerator + "/" + denominator;
-    }
 
+
+    /*
+    Assuming both the numerator and the denominator can be negative.
+    They cannot both be negative though, then they would actually be positive (multiply fraction with -1)
+     */
     public boolean isNegative(){
-        /*
-        Assuming both the numerator and the denominator can be negative.
-        They cannot both be negative though, then they would actually be positive (multiply fraction with -1)
-         */
         return (numerator < 0) ^ (denominator < 0);
     }
 
@@ -117,17 +126,33 @@ public class Fraction {
         numerator = fr1.numerator + fr2.numerator;
         denominator = fr1.denominator;
     }
+    /*
+    Subtract current fraction with fr1. (current fraction - fr1)
+     */
+    public void subtract(Fraction fr1) {
+        Fraction fr2 = new Fraction(numerator, denominator);
+        if (fr1.denominator != fr2.denominator) {
+            makeEven(fr1, fr2);
+        }
+        numerator = fr2. numerator - fr1.numerator;
+        denominator = fr2.denominator;
 
-    public void subtract() {
 
     }
 
-    public void multiply() {
-
+    public void multiply(Fraction fr1) {
+        numerator *= fr1.numerator;
+        denominator *= fr1.denominator;
     }
 
-    public void divide() {
-
+    /*
+    Divide current fraction with fr1. (current fraction / fr1).
+    A division of two fractions can also be done by switching the numerator and denominator of fr1 and
+    then multiply the two fractions. This is what is done here, to achieve a division of two fractions.
+     */
+    public void divide(Fraction fr1) {
+        numerator *= fr1.denominator;
+        denominator *= fr1.numerator;
     }
 
 

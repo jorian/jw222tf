@@ -9,7 +9,11 @@ public class FractionMain {
         Fraction br = new Fraction(1,4);
         Fraction cr = new Fraction(5, -8);
         Fraction dr = new Fraction(-5, 8);
-        Fraction er = new Fraction(-9,-12);
+        Fraction er = new Fraction(9,12);
+
+        System.out.println(br.getNumerator());
+        System.out.println(br.getDenominator());
+
 
         System.out.println("String ar: " + ar.toString());
         System.out.println("String br: " + br.toString());
@@ -18,8 +22,11 @@ public class FractionMain {
         System.out.println("String er: " + er.toString() + ": Negative? " + er.isNegative());
 
 
-        ar.setFraction(br);
-        System.out.println(ar.toString());
+        //ar.setFraction(br);
+        //System.out.println(ar.toString());
+
+        er.divide(br);
+        System.out.println(er.toString());
 
         br.add(dr);
         System.out.println(br.toString());
