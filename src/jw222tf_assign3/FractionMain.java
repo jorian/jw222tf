@@ -10,6 +10,9 @@ public class FractionMain {
         Fraction cr = new Fraction(5, -8);
         Fraction dr = new Fraction(-5, 8);
         Fraction er = new Fraction(9,12);
+        Fraction gr = new Fraction(9,18);
+        Fraction hr = new Fraction(18,36);
+
 
         System.out.println(br.getNumerator());
         System.out.println(br.getDenominator());
@@ -33,6 +36,10 @@ public class FractionMain {
 
         br.add(1, 4);
         System.out.println(br.toString());
+
+        System.out.println(gr.isEqualTo(hr));
+        System.out.println(gr.isEqualTo(er));
+
 
 
 

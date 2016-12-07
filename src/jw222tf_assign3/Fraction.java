@@ -126,6 +126,8 @@ public class Fraction {
         numerator = fr1.numerator + fr2.numerator;
         denominator = fr1.denominator;
     }
+
+
     /*
     Subtract current fraction with fr1. (current fraction - fr1)
      */
@@ -140,6 +142,7 @@ public class Fraction {
 
     }
 
+
     public void multiply(Fraction fr1) {
         numerator *= fr1.numerator;
         denominator *= fr1.denominator;
@@ -153,6 +156,10 @@ public class Fraction {
     public void divide(Fraction fr1) {
         numerator *= fr1.denominator;
         denominator *= fr1.numerator;
+    }
+
+    public boolean isEqualTo(Fraction fr1) {
+        return (numerator / fr1.numerator) == (denominator / fr1.denominator);
     }
 
 
