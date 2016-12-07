@@ -104,8 +104,9 @@ public class Arrays {
                 for (int j=0;j<sub.length;j++) {
                     temp[j] = arr[i+j];
                 }
-                // The following took me a while to figure out.
                 if (java.util.Arrays.equals(temp, sub)) {
+                    // n++;
+
                     return true;
                 }
             }

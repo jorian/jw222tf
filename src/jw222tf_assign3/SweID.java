@@ -10,6 +10,8 @@ public class SweID {
         String idNumber2 = "640123-8826";
         String idNumber3 = "550414-0913";
 
+
+
         System.out.println("The first part of the idnumber " + idNumber1 + ": " + getFirstPart(idNumber1));
         System.out.println("The second part of the idnumber " + idNumber2 + ": " + getLastPart(idNumber2));
 
@@ -59,7 +61,7 @@ public class SweID {
         boolean monthCheck = false, dayCheck = false, checksumCheck = false;
         int sum = 0;
         int tempInt;
-        idNumber = idNumber.replaceAll("-", "");
+        idNumber = idNumber.replaceAll("-", ""); // only change it at position 6
         int monthNr = Integer.valueOf(idNumber.substring(2,4));
         if (monthNr <= 12) {
             monthCheck = true;
@@ -129,7 +131,7 @@ public class SweID {
 
     private static boolean isLeapYear(String date) { //in format of YYMMDD.
         int year = Integer.valueOf(date.substring(0,2));
-        if (year <= 16) {
+        if (year <= 16) { // I assume there are very few people older than 100 years old. For the sake of lazyness.
             year += 2000;
         }
         else {
