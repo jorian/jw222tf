@@ -105,8 +105,8 @@ public class Arrays {
         first element of the sub array is found in the main array, the 'i' in main array is added with the 'j'
         of the sub array to get a synchronous iteration in both arrays, in order to check for equalness.
 
-        If the two elements are the same, a counter gets a + 1. If the counter has the same size as the length
-        of the sub array, the sub array must be present in the main array.
+        If the two elements are the same, a counter gets a + 1. If, after checking each element, the counter has the same
+        size as the length of the sub array, the sub array must be present in the main array.
          */
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == sub[0]) {
