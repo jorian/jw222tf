@@ -98,34 +98,29 @@ public class Arrays {
 
 
     private static boolean hasSubsequence(int[] arr, int[] sub) {
+        /*
+        First a for-loop is initiated in order to find the first occurrence of the sub array in the main array.
+        When that happens, a new for-loop is initiated. In this for loop, a check is done if each element of the
+        sub array is the same as the consecutive elements in the main array. Since it is known where the first occurrence of the
+        first element of the sub array is found in the main array, the 'i' in main array is added with the 'j'
+        of the sub array to get a synchronous iteration in both arrays, in order to check for equalness.
+
+        If the two elements are the same, a counter gets a + 1. If the counter has the same size as the length
+        of the sub array, the sub array must be present in the main array.
+         */
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == sub[0]) {
-                int[] temp = new int[sub.length];
+                int correct = 0;
                 for (int j=0;j<sub.length;j++) {
-                    temp[j] = arr[i+j];
+                    if (arr[i + j] == sub[j]) {
+                        correct++;
+                    }
                 }
-                if (java.util.Arrays.equals(temp, sub)) {
-                    // n++;
-
+                if (correct == sub.length){
                     return true;
                 }
             }
         }
         return false;
     }
-
-    /*private static boolean hasSubsequence(int[] arr, int[] sub) {
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == sub[0]) {
-                String str2 = java.util.Arrays.toString(sub);
-                str2 = str2.substring(1, str2.length()-1);
-                String str1 = toString(arr);
-                str1 = str1.substring(i * 3, (i * 3 + str2.length()));
-                if (str1.equals(str2)) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }*/
 }
