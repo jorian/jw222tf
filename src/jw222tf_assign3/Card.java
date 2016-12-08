@@ -18,6 +18,11 @@ public class Card {
         rank = nwRank;
     }
 
+    public String displayCard() {
+        String str = String.valueOf(rank + " of " + suit);
+        return str;
+    }
+
     public Suit getSuit() {
         return suit;
     }

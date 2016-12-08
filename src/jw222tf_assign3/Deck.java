@@ -1,29 +1,38 @@
 package jw222tf_assign3;
 
-import jw222tf_assign3.Card.*;
-
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
+
+import jw222tf_assign3.Card.*;
 
 /**
  * Created by Jorian on 7-12-2016 at 16:57.
  */
 
 public class Deck {
-    private ArrayList<Card> deck;
+    ArrayList<Card> setOfCards = new ArrayList<>();
 
     public Deck() {
-        deck = new ArrayList<Card>();
-        for (Suit chooseSuit : Suit.values()) {
-            for (Rank chooseRank : Rank.values()) {
-                deck.add(new Card(chooseSuit, chooseRank));
+
+
+        for (Suit nwSuit : Suit.values()) {
+            for (Rank nwRank : Rank.values()) {
+                Card temp = new Card(nwSuit, nwRank);
+                setOfCards.add(temp);
+                System.out.println(temp.displayCard());
             }
         }
     }
 
-
-    public void showCards() {
-        for (Card i : deck) {
-            System.out.println(i);
+    public void displaySetOfCards() {
+        for (Card i : setOfCards) {
+            System.out.println(i.displayCard());
         }
+    }
+
+    public void shuffleSetOfCards() {
+        long seed = System.nanoTime();
+        Collections.shuffle(setOfCards, new Random(seed));
     }
 }
