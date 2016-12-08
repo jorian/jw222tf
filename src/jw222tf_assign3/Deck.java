@@ -12,10 +12,10 @@ import jw222tf_assign3.Card.*;
 
 public class Deck {
     ArrayList<Card> setOfCards = new ArrayList<>();
+    ArrayList<Card> dealtCards = new ArrayList<>();
+    int drawnCards;
 
     public Deck() {
-
-
         for (Suit nwSuit : Suit.values()) {
             for (Rank nwRank : Rank.values()) {
                 Card temp = new Card(nwSuit, nwRank);
@@ -31,8 +31,37 @@ public class Deck {
         }
     }
 
+    public void returnDealtCards() {
+        if (dealtCards.size() > 0) {
+            int size = dealtCards.size();
+            for (int i = 0; i < size; i++) {
+                int position = dealtCards.size() - 1;
+                Card temp = dealtCards.get(position);
+                dealtCards.remove(position);
+                setOfCards.add(temp);
+            }
+        }
+    }
+    //need to shuffle with an incomplete deck?
     public void shuffleSetOfCards() {
+        //if size of dealtcards > 0, return them to setOfCards
         long seed = System.nanoTime();
         Collections.shuffle(setOfCards, new Random(seed));
+    }
+
+    public void dealACard() {
+        if (setOfCards.size() == 52) {
+            shuffleSetOfCards(); // to prevent dealing a card from an unshuffled deck
+        }
+        int position = 52 - dealtCards.size() - 1; //deal a card from the end (like in real life)
+        Card temp = setOfCards.get(position);
+        setOfCards.remove(position); //removing an element is best done by starting at the end of arraylist
+        dealtCards.add(temp);
+
+        System.out.println("A card has been drawn: "+ dealtCards.get(dealtCards.size() - 1).displayCard());
+    }
+
+    public int cardsInDeck() {
+        return setOfCards.size();
     }
 }

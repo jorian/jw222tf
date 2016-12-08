@@ -11,5 +11,18 @@ public class PlayingCardsMain {
 
         deck.shuffleSetOfCards();
         deck.displaySetOfCards();
+
+        System.out.println();
+
+        System.out.println();
+        deck.dealACard();
+        deck.dealACard();
+        deck.dealACard();
+
+        System.out.println("\nCards left in deck: "+ deck.cardsInDeck());
+
+        System.out.println("\nDealt cards are returned to deck.");
+        deck.returnDealtCards();
+        System.out.println("Cards left in deck: "+ deck.cardsInDeck());
     }
 }
