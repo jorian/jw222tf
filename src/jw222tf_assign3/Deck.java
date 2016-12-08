@@ -11,8 +11,8 @@ import jw222tf_assign3.Card.*;
  */
 
 public class Deck {
-    ArrayList<Card> setOfCards = new ArrayList<>();
-    ArrayList<Card> dealtCards = new ArrayList<>();
+    private ArrayList<Card> setOfCards = new ArrayList<>();
+    private ArrayList<Card> dealtCards = new ArrayList<>();
     int drawnCards;
 
     public Deck() {
@@ -20,9 +20,18 @@ public class Deck {
             for (Rank nwRank : Rank.values()) {
                 Card temp = new Card(nwSuit, nwRank);
                 setOfCards.add(temp);
-                System.out.println(temp.displayCard());
             }
         }
+    }
+
+    public Deck(boolean shuffled) {
+        for (Suit nwSuit : Suit.values()) {
+            for (Rank nwRank : Rank.values()) {
+                Card temp = new Card(nwSuit, nwRank);
+                setOfCards.add(temp);
+            }
+        }
+        shuffleSetOfCards();
     }
 
     public void displaySetOfCards() {
