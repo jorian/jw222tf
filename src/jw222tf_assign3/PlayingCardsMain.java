@@ -21,8 +21,8 @@ public class PlayingCardsMain {
 
         System.out.println("\nCards left in deck: "+ deck.cardsInDeck());
 
-        System.out.println("\nDealt cards are returned to deck.");
-        deck.returnDealtCards();
+        //System.out.println("\nDealt cards are returned to deck.");
+        deck.shuffleSetOfCards();
         System.out.println("Cards left in deck: "+ deck.cardsInDeck());
 
         Deck shuffledDeck = new Deck(true);

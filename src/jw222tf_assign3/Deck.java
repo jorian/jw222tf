@@ -13,7 +13,6 @@ import jw222tf_assign3.Card.*;
 public class Deck {
     private ArrayList<Card> setOfCards = new ArrayList<>();
     private ArrayList<Card> dealtCards = new ArrayList<>();
-    int drawnCards;
 
     public Deck() {
         for (Suit nwSuit : Suit.values()) {
@@ -31,7 +30,8 @@ public class Deck {
                 setOfCards.add(temp);
             }
         }
-        shuffleSetOfCards();
+        if (shuffled)
+            shuffleSetOfCards();
     }
 
     public void displaySetOfCards() {
@@ -51,17 +51,17 @@ public class Deck {
             }
         }
     }
-    //need to shuffle with an incomplete deck?
     public void shuffleSetOfCards() {
-        //if size of dealtcards > 0, return them to setOfCards
-        long seed = System.nanoTime();
-        Collections.shuffle(setOfCards, new Random(seed));
+        if (cardsInDeck() == 52) {
+            long seed = System.nanoTime();
+            Collections.shuffle(setOfCards, new Random(seed));
+        } else {
+            returnDealtCards();
+            shuffleSetOfCards();
+        }
     }
 
     public void dealACard() {
-        if (setOfCards.size() == 52) {
-            shuffleSetOfCards(); // to prevent dealing a card from an unshuffled deck
-        }
         int position = 52 - dealtCards.size() - 1; //deal a card from the end (like in real life)
         Card temp = setOfCards.get(position);
         setOfCards.remove(position); //removing an element is best done by starting at the end of arraylist
