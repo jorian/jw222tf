@@ -49,6 +49,12 @@ public class Deck {
         }
     }
 
+    public void displayDealtCards() {
+        for (Card i : dealtCards) {
+            System.out.println(i.displayCard());
+        }
+    }
+
     public void returnDealtCards() {
         if (dealtCards.size() > 0) {
             int size = dealtCards.size();
@@ -62,7 +68,7 @@ public class Deck {
     }
 
     public void shuffleSetOfCards() {
-        if (cardsInDeck() == 52) {
+        if (cardsInDeck() == 52) { //only shuffle a complete deck
             long seed = System.nanoTime();
             Collections.shuffle(setOfCards, new Random(seed));
         } else {
@@ -70,6 +76,10 @@ public class Deck {
         }
     }
 
+    /*
+    For the game play123main, there is no need for printing the card every time it is dealt.
+    So a parameter is passed in order to determine whether the card should be printed.
+     */
     public Card dealACard(boolean printFace) {
         int position = 52 - dealtCards.size() - 1; //deal a card from the end (like in real life)
         Card temp = setOfCards.get(position);

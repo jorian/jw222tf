@@ -13,7 +13,9 @@ public class Play123Main {
                 nWins++;
             }
         }
-        System.out.println(nWins);
+        System.out.println("From playing 10,000 times, " + nWins + " games were won.");
+        System.out.printf("\nThat is a probability of %.2f%%", ((nWins * 100.0) / 10000));
+
     }
 
     private static boolean play123() {
