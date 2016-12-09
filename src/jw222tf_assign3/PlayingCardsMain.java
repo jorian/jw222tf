@@ -7,7 +7,7 @@ public class PlayingCardsMain {
     public static void main(String[] args) {
         Deck deck = new Deck();
 
-        deck.displaySetOfCards();
+        deck.alternativeDisplaySetOfCards();
 
         deck.shuffleSetOfCards();
         deck.displaySetOfCards();
@@ -15,16 +15,14 @@ public class PlayingCardsMain {
         System.out.println();
 
         System.out.println();
-        deck.dealACard();
-        deck.dealACard();
-        deck.dealACard();
+        deck.dealACard(true);
+        deck.dealACard(true);
+        deck.dealACard(true);
 
         System.out.println("\nCards left in deck: "+ deck.cardsInDeck());
 
         //System.out.println("\nDealt cards are returned to deck.");
         deck.shuffleSetOfCards();
         System.out.println("Cards left in deck: "+ deck.cardsInDeck());
-
-        Deck shuffledDeck = new Deck();
     }
 }

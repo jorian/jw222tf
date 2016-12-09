@@ -23,9 +23,29 @@ public class Deck {
         }
     }
 
+    public void displayFace(Card temp){
+        System.out.println(temp.displayCard());
+    }
+
     public void displaySetOfCards() {
         for (Card i : setOfCards) {
             System.out.println(i.displayCard());
+        }
+    }
+
+    public void alternativeDisplaySetOfCards() {
+        String face = "";
+        for (Card i : setOfCards) {
+            switch (i.getSuit()) {
+                case Hearts : face = "\u2665";
+                break;
+                case Clubs: face = "\u2663";
+                break;
+                case Diamonds: face = "\u2666";
+                break;
+                case Spades: face = "\u2660";
+            }
+            System.out.println(i.getRank() + " " + face);
         }
     }
 
@@ -50,13 +70,18 @@ public class Deck {
         }
     }
 
-    public void dealACard() {
+    public Card dealACard(boolean printFace) {
         int position = 52 - dealtCards.size() - 1; //deal a card from the end (like in real life)
         Card temp = setOfCards.get(position);
         setOfCards.remove(position); //removing an element is best done by starting at the end of arraylist
         dealtCards.add(temp);
+        if (printFace) {
+            displayFace(temp);
+        }
+        return temp;
 
-        System.out.println("A card has been drawn: "+ dealtCards.get(dealtCards.size() - 1).displayCard());
+
+//        System.out.println("A card has been drawn: "+ dealtCards.get(dealtCards.size() - 1).displayCard());
     }
 
     public int cardsInDeck() {
