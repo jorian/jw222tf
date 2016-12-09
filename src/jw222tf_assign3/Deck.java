@@ -23,17 +23,6 @@ public class Deck {
         }
     }
 
-    public Deck(boolean shuffled) {
-        for (Suit nwSuit : Suit.values()) {
-            for (Rank nwRank : Rank.values()) {
-                Card temp = new Card(nwSuit, nwRank);
-                setOfCards.add(temp);
-            }
-        }
-        if (shuffled)
-            shuffleSetOfCards();
-    }
-
     public void displaySetOfCards() {
         for (Card i : setOfCards) {
             System.out.println(i.displayCard());
@@ -51,13 +40,13 @@ public class Deck {
             }
         }
     }
+
     public void shuffleSetOfCards() {
         if (cardsInDeck() == 52) {
             long seed = System.nanoTime();
             Collections.shuffle(setOfCards, new Random(seed));
         } else {
-            returnDealtCards();
-            shuffleSetOfCards();
+            System.out.println("The deck is incomplete and can not be shuffled.");
         }
     }
 

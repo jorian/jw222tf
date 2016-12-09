@@ -25,6 +25,6 @@ public class PlayingCardsMain {
         deck.shuffleSetOfCards();
         System.out.println("Cards left in deck: "+ deck.cardsInDeck());
 
-        Deck shuffledDeck = new Deck(true);
+        Deck shuffledDeck = new Deck();
     }
 }
