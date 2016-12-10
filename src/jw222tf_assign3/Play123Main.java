@@ -23,8 +23,9 @@ public class Play123Main {
         deck.shuffleSetOfCards();
         Card temp;
         int a = 1;
+        int size = deck.cardsInDeck();
 
-        for (int i = 0; i < 52; i++) {
+        for (int i = 0; i < size; i++) {
             temp = deck.dealACard(false);
             if (a == 1) {
                 a = 2;
