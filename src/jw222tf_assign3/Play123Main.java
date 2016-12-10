@@ -22,22 +22,26 @@ public class Play123Main {
         Deck deck = new Deck();
         deck.shuffleSetOfCards();
         Card temp;
+        int a = 1;
 
-        for (int i = deck.cardsInDeck() - 1; i >= 0; i--) {
+        for (int i = 0; i < 52; i++) {
             temp = deck.dealACard(false);
-            if (i % 2 != 0) {
-                if (i % 3 == 0) {   // it is 3
+            if (a == 1) {
+                a = 2;
+                if (temp.getRank() == Card.Rank.Ace) {
+                    return false;
+                }
+            } else {
+                if (a == 2) {
+                    a = 3;
+                    if (temp.getRank() == Card.Rank.Deuce) {
+                        return false;
+                    }
+                } else {
+                    a = 1;
                     if (temp.getRank() == Card.Rank.Three) {
                         return false;
                     }
-                } else {            // it is 1
-                    if (temp.getRank() == Card.Rank.Ace) {
-                        return false;
-                    }
-                }
-            } else {
-                if (temp.getRank() == Card.Rank.Deuce) { // it is 2.
-                    return false;
                 }
             }
         }
