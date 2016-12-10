@@ -4,10 +4,10 @@ package jw222tf_assign3;
  * Created by Jorian on 7-12-2016 at 16:19.
  */
 public class Card {
-    public enum Suit {
+    private enum Suit {
         Clubs, Diamonds, Spades, Hearts
     }
-    public enum Rank {
+    private enum Rank {
         Ace, Deuce, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King
     }
     private Suit suit;
