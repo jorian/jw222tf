@@ -14,6 +14,10 @@ public class Deck {
     private ArrayList<Card> setOfCards = new ArrayList<>();
     private ArrayList<Card> dealtCards = new ArrayList<>();
 
+    /*
+    Constructor creates an ordered deck of cards and adds a unique combination of Suit and Rank
+    to the ArrayList setOfCards.
+     */
     public Deck() {
         for (Suit nwSuit : Suit.values()) {
             for (Rank nwRank : Rank.values()) {
@@ -23,16 +27,25 @@ public class Deck {
         }
     }
 
+    /*
+    Displays the face of the card (Suit and Rank).
+    It accepts a Card object as a parameter, and goes to the Card class to print the values of the card-object.
+     */
     public void displayFace(Card temp){
         System.out.println(temp.displayCard());
     }
-
+    /*
+    To display all the cards in the current setOfCards.
+     */
     public void displaySetOfCards() {
         for (Card i : setOfCards) {
-            System.out.println(i.displayCard());
+            displayFace(i);
         }
     }
 
+    /*
+    An alternative way of showing the four Suits in the current setOfCards.
+     */
     public void alternativeDisplaySetOfCards() {
         String face = "";
         for (Card i : setOfCards) {
@@ -49,12 +62,19 @@ public class Deck {
         }
     }
 
+    /*
+    Displays the cards that have been dealt.
+     */
     public void displayDealtCards() {
         for (Card i : dealtCards) {
-            System.out.println(i.displayCard());
+            displayFace(i);
         }
     }
 
+    /*
+    If cards have been dealt, they are added to the ArrayList dealtCards.
+    This method can be called to return them to the ArrayList setOfCards.
+     */
     public void returnDealtCards() {
         if (dealtCards.size() > 0) {
             int size = dealtCards.size();
@@ -67,33 +87,49 @@ public class Deck {
         }
     }
 
+    /*
+    Shuffles the setOfCards, but only if the set contains all the 52 cards. Incomplete sets cannot be shuffled and
+    prints a message to inform the user.
+
+    The shuffle method of the Collections library is used here. It shuffles the elements in setOfCards according
+    to the Random object, passed as a parameter. Found here:
+    http://stackoverflow.com/questions/2249520/javas-collections-shuffle-is-doing-what
+     */
     public void shuffleSetOfCards() {
-        if (cardsInDeck() == 52) { //only shuffle a complete deck
-            long seed = System.nanoTime();
-            Collections.shuffle(setOfCards, new Random(seed));
+        if (cardsInDeck() == 52) {
+            Collections.shuffle(setOfCards, new Random());
         } else {
-            System.out.println("The deck is incomplete and can not be shuffled.");
+            System.out.println("The deck is incomplete and cannot be shuffled.");
         }
     }
 
     /*
+    Deals a card, by removing the last element (Card object) from the current ArrayList setOfCards and place them in the
+    first available position in ArrayList dealtCards by using the .add method. (Just like you would do in real life,
+    cards are dealt face down. That means the last card in the stack is dealt first. It also is a good practice when
+    removing elements from an ArrayList,
+
     For the game play123main, there is no need for printing the card every time it is dealt.
     So a parameter is passed in order to determine whether the card should be printed.
+    (Is that ok? Or should I use two methods here, one with parameter and one without, where the one without parameter
+    always prints the dealt card?)
+
+    Returns a Card object.
      */
     public Card dealACard(boolean printFace) {
-        int position = 52 - dealtCards.size() - 1; //deal a card from the end (like in real life)
+        int position = 52 - dealtCards.size() - 1;
         Card temp = setOfCards.get(position);
-        setOfCards.remove(position); //removing an element is best done by starting at the end of arraylist
+        setOfCards.remove(position);
         dealtCards.add(temp);
         if (printFace) {
             displayFace(temp);
         }
         return temp;
-
-
-//        System.out.println("A card has been drawn: "+ dealtCards.get(dealtCards.size() - 1).displayCard());
     }
 
+    /*
+    Returns the number of cards in the current ArrayList setOfCards.
+     */
     public int cardsInDeck() {
         return setOfCards.size();
     }
