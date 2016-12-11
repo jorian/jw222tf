@@ -99,7 +99,7 @@ public class Deck {
         if (cardsInDeck() == 52) {
             Collections.shuffle(setOfCards, new Random());
         } else {
-            System.out.println("The deck is incomplete and cannot be shuffled.");
+            System.out.println("ERROR: The deck is incomplete and cannot be shuffled.");
         }
     }
 
@@ -107,7 +107,7 @@ public class Deck {
     Deals a card, by removing the last element (Card object) from the current ArrayList setOfCards and place them in the
     first available position in ArrayList dealtCards by using the .add method. (Just like you would do in real life,
     cards are dealt face down. That means the last card in the stack is dealt first. It also is a good practice when
-    removing elements from an ArrayList,
+    removing elements from an ArrayList)
 
     For the game play123main, there is no need for printing the card every time it is dealt.
     So a parameter is passed in order to determine whether the card should be printed.
