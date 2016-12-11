@@ -14,7 +14,7 @@ public class Play123Main {
             }
         }
         System.out.println("From playing 10,000 times, " + nWins + " games were won.");
-        System.out.printf("\nThat is a probability of %.2f%%", ((nWins * 100.0) / 10000));
+        System.out.printf("\nThat is a probability of %.2f%%.\n", ((nWins * 100.0) / 10000));
 
     }
 
