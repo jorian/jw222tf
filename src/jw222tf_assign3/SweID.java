@@ -18,8 +18,8 @@ public class SweID {
         System.out.println("\n" + idNumber2 + " is a female number: " + isFemaleNumber(idNumber2));
         System.out.println(idNumber3 + " is a female number: " + isFemaleNumber(idNumber3));
 
-        System.out.println("\nMale number: " + isMaleNumber(idNumber2));
-        System.out.println("Male number: " + isMaleNumber(idNumber3));
+        System.out.println("\n" + idNumber2 + " is a male number: " + isMaleNumber(idNumber2));
+        System.out.println(idNumber3 + " is a male number: " + isMaleNumber(idNumber3));
 
         System.out.println("\nAre " + idNumber1 + " & " + idNumber2 + " equal: " + areEqual(idNumber1, idNumber2));
         System.out.println("Are " + idNumber1 + " & " + idNumber1 + " equal: " + areEqual(idNumber1, idNumber1));
@@ -40,13 +40,17 @@ public class SweID {
     }
 
 
+    /*
+    In hindsight, it would have been better to first check the id number before checking if it's a female or
+    male number.
+     */
     private static boolean isFemaleNumber(String idNumber) {
-        return (Integer.valueOf(getLastPart(idNumber).substring(0,3)) % 2 == 0);
+        return (Integer.valueOf(getLastPart(idNumber).substring(2,3)) % 2 == 0);
     }
 
 
     private static boolean isMaleNumber(String idNumber) {
-        return (Integer.valueOf(getLastPart(idNumber).substring(0,3)) % 2 != 0); //learned about the difference between 'int' and 'Integer' here.
+        return (Integer.valueOf(getLastPart(idNumber).substring(2,3)) % 2 != 0);
     }
 
 
@@ -55,13 +59,12 @@ public class SweID {
     }
 
 
-    //date correct (y, m, d)
-    //last part is correct according to rules on wikipedia.
     private static boolean isCorrect(String idNumber) {
         boolean monthCheck = false, dayCheck = false, checksumCheck = false;
         int sum = 0;
         int tempInt;
-        idNumber = idNumber.replaceAll("-", ""); // only change it at position 6
+        String checkedIdNumber = idNumber.substring(0,6) + idNumber.substring(7,11);
+        idNumber = checkedIdNumber;
         int monthNr = Integer.valueOf(idNumber.substring(2,4));
         if (monthNr <= 12) {
             monthCheck = true;
@@ -90,11 +93,15 @@ public class SweID {
         }
 
         int dayNr = Integer.valueOf(idNumber.substring(4, 6));
-        if (dayNr <= max | !monthCheck) { //if monthCheck is false, a proper evaluation of dayCheck cannot be done.
-            dayCheck = true;
-        }
-        else {
-            System.err.println("The day you entered is incorrect.");
+        // If monthCheck is false, a proper evaluation of dayCheck cannot be done.
+        // That is why monthCheck first needs to be true.
+        // In hindsight, this should have been done earlier in the process.
+        if (monthCheck) {
+            if (dayNr <= max) {
+                dayCheck = true;
+            } else {
+                System.err.println("The day you entered is incorrect.");
+            }
         }
 
         for (int i = 0;i < idNumber.length() - 1;i++) {
@@ -115,12 +122,11 @@ public class SweID {
                 }
             }
         }
-        System.out.println("\nChecksum: " + sum);
         int lastDigit = 10 - (sum % 10);
         if (lastDigit == 10) {
             lastDigit = 0;
         }
-        int idNumberLastDigit = idNumber.charAt(idNumber.length() - 1) - '0';
+        int idNumberLastDigit = idNumber.charAt(idNumber.length() - 1) - '0'; // Minus character 0 is casting it to an int.
         if (idNumberLastDigit == lastDigit) {
             checksumCheck = true;
         }
@@ -129,9 +135,16 @@ public class SweID {
     }
 
 
+    /*
+    The following function determines whether the year in the id number is a leap year.
+    If it is, it has influence on the isCorrect function on determining whether the date is correct.
+
+    I assume there are very few people older than 100 years old. For the sake of lazyness.
+    But in order for the program to work successfully, this should have been accounted for, of course.
+     */
     private static boolean isLeapYear(String date) { //in format of YYMMDD.
         int year = Integer.valueOf(date.substring(0,2));
-        if (year <= 16) { // I assume there are very few people older than 100 years old. For the sake of lazyness.
+        if (year <= 16) {
             year += 2000;
         }
         else {
