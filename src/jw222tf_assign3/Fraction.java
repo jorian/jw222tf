@@ -9,6 +9,9 @@ public class Fraction {
 
 
     /*
+    (It is correct to not use static here, right? Because we need the two variables in every method? And we should
+    use static if we do not need an initiated object Fraction for a method to work, right?)
+
     Constructors:
      */
     Fraction(){
@@ -103,9 +106,6 @@ public class Fraction {
 
     private int commonDivisor(int denom1, int denom2) {
         return denom1 * denom2;
-        //if (((gcd / 2) % denom1 == 0) && (gcd / 2) % denom2 == 0) {
-        //    gcd /= 2;
-        //}
     }
 
     public void add(int num, int denom) {
