@@ -9,11 +9,12 @@ import java.util.Scanner;
  */
 public class CountChar {
     public static void main(String[] args) {
-        Scanner in = null;
+        Scanner in;
         try {
             in = new Scanner(new File("/Users/JorianWielink/Desktop/HistoryOfProgramming.txt"));
             letterCounter(in);
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             System.out.println("Exception: " + e.getMessage());
         }
     }
@@ -47,6 +48,11 @@ public class CountChar {
         }
         System.out.println("Uppercase: " + upperCase + "\nLowercase: " + lowerCase + "\nWhitespaces: " + whiteSpace +
                 "\nOthers: " + others);
+
+        // My IntelliJ IDE suggested to assert 'in' to be not null. Maybe I overlooked it, but it can't be null in this
+        // program, logically, right?
+        assert in != null;
+        in.close();
     }
 }
 
