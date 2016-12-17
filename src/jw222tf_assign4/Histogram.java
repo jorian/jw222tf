@@ -11,10 +11,12 @@ public class Histogram {
     public static void main(String[] args) throws IOException {
         File inputFile = new File(args[0]);
         Scanner in = new Scanner(inputFile);
+
         int[] groupCollection = new int[10];
         int max = 0;
         int outsideRange = 0;
         int insideRange = 0;
+        int nIntegers = 0;
 
         /*
         Start a while loop to go through each line. Stops when no integer is found on the next line.
@@ -34,7 +36,9 @@ public class Histogram {
             } else {
                 outsideRange++;
             }
+            nIntegers++;
         }
+        in.close();
 
         // Determine the highest value of the array, for Format to work in the end.
         for (int aGroupCollection : groupCollection) {
@@ -43,14 +47,18 @@ public class Histogram {
             }
         }
 
-        System.out.println("Reading integers from file: " + inputFile + "\nInside range: " + insideRange +
+        /*
+        This part prints the actual hologram. First I iterate through the array groupCollection.
+        For every element in this array, a Stringbuilder is appended with the integer found in the groupCollection element.
+         */
+        System.out.println("Reading " + nIntegers + " integers from file: " + inputFile + "\nInside range: " + insideRange +
                 "\nOthers: " + outsideRange + "\n");
         for (int i = 0; i < groupCollection.length; i++) {
             StringBuilder stars = new StringBuilder();
             for (int j = 0; j < groupCollection[i]; j++) {
                 stars.append("* ");
             }
-            System.out.format("%2d - %3d  | %-" + max + "s\n", ((i + 1) * 10 - 9), ((i + 1) * 10), stars);
+            System.out.format("%-2d - %-3d  | %-" + max + "s\n", ((i + 1) * 10 - 9), ((i + 1) * 10), stars);
         }
     }
 }
