@@ -25,7 +25,6 @@ public class CountChar {
         int whiteSpace = 0;
         int others = 0;
 
-
         while (in != null && in.hasNext()) {
             String line = in.nextLine();
             whiteSpace++; // since nextLine consumes the newline character.
@@ -37,7 +36,6 @@ public class CountChar {
                 }
                 else if (Character.isUpperCase(ch)) {
                     upperCase++;
-
                 }
                 else if (Character.isWhitespace(ch)) {
                     whiteSpace++;
@@ -50,8 +48,8 @@ public class CountChar {
         System.out.println("Uppercase: " + upperCase + "\nLowercase: " + lowerCase + "\nWhitespaces: " + whiteSpace +
                 "\nOthers: " + others);
 
-        // My IntelliJ IDE suggested to assert 'in' to be not null. Maybe I overlooked it, but it can't be null in this
-        // program, logically, right?
+        // My IntelliJ IDE suggested to assert 'in' to be not null, because of NullPointerExceptions.
+        // Maybe I overlooked it, but it can't be null in this program, logically, right?
         assert in != null;
         in.close();
     }
