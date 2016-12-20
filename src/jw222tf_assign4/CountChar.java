@@ -37,6 +37,7 @@ public class CountChar {
                 }
                 else if (Character.isUpperCase(ch)) {
                     upperCase++;
+
                 }
                 else if (Character.isWhitespace(ch)) {
                     whiteSpace++;
