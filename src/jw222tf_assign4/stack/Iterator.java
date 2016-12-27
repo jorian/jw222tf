@@ -21,5 +21,4 @@ class Iterator {
     Object next() {
         return elements[firstElement++];
     }
-
 }

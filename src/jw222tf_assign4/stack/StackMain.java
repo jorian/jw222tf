@@ -6,36 +6,39 @@ package jw222tf_assign4.stack;
 public class StackMain {
     public static void main(String[] args) {
 
-        Stacker enStack = new Stacker();
+        Stacker Stapel = new Stacker(7);
 
-        enStack.push(43);
-        enStack.push(3);
-        enStack.push(4);
-        enStack.push(34);
-        enStack.push(54);
-        enStack.push(99);
-        enStack.push(23); // index out of bound.
+        Stapel.push(43);
+        Stapel.push(3);
+//        Stapel.push(4);
+//        Stapel.push(34);
+//        Stapel.push(54);
+//        Stapel.push(99);
+//        Stapel.push(23); // index out of bound.
 
-        System.out.println("Amount in stack: " + enStack.size());
+        System.out.println("Amount in stack: " + Stapel.size());
 
-        System.out.println("Is stack empty? " + enStack.isEmpty());
+        System.out.println("Is stack empty? " + Stapel.isEmpty());
 
-        System.out.println("Get one from stack: " + enStack.pop());
+        System.out.println("Get one from stack: " + Stapel.pop());
 
-        System.out.println("Check next one: " + enStack.peek());
+        System.out.println("Check next one: " + Stapel.peek());
 
-        System.out.println("Get one from stack: " + enStack.pop());
+        System.out.println("Get one from stack: " + Stapel.pop());
+        System.out.println("Get one from stack: " + Stapel.pop());
 
-        System.out.println("Remaining amount in stack: " + enStack.size());
+        System.out.println("Remaining amount in stack: " + Stapel.size());
 
-        System.out.println("Is stack empty? " + enStack.isEmpty());
+        System.out.println("Is stack empty? " + Stapel.isEmpty());
 
-        Iterator iterator = enStack.iterator();
+        Iterator iter = Stapel.iterator();
 
-        System.out.println("\nRemaining elements in stack:");
-        while (iterator.hasNext()) {
-            Object o = iterator.next();
-            System.out.println(o + " ");
+        if (!Stapel.isEmpty()) {
+            System.out.println("\nRemaining elements in stack:");
+            while (iter.hasNext()) {
+                Object o = iter.next();
+                System.out.println(o + " ");
+            }
         }
     }
 }

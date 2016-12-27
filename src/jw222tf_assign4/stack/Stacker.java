@@ -1,13 +1,15 @@
 package jw222tf_assign4.stack;
 
-import java.util.EmptyStackException;
-
 /**
  * Created by JorianWielink on 27/12/2016.
  */
 public class Stacker implements IStack {
     private int size;
-    private Object[] stapel = new Object[6];
+    private Object[] stapel;
+
+    Stacker(int stackSize) {
+        stapel = new Object[stackSize];
+    }
 
     @Override
     public int size() {
@@ -16,9 +18,7 @@ public class Stacker implements IStack {
 
     @Override
     public boolean isEmpty() {
-        if (size == 0)
-            return true;
-        return false;
+        return size <= 0;
     }
 
     @Override
@@ -28,20 +28,19 @@ public class Stacker implements IStack {
     }
 
     @Override
-    public Object pop() throws EmptyStackException {
-        try {
+    public Object pop() {
+        if (size() > 0) {
             size--;
             return stapel[size()];
-        } catch (EmptyStackException e) {
-            System.out.println(e.getMessage());
+        } else {
+            System.out.println("No elements in stack");
             return null;
         }
     }
 
     @Override
     public Object peek() {
-        Object temp = stapel[size() - 1];
-        return temp;
+        return stapel[size() - 1];
     }
 
     @Override
