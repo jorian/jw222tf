@@ -6,7 +6,7 @@ package jw222tf_assign3;
 
 public class SweID {
     public static void main(String[] args) {
-        String idNumber1 = "911029-2342"; //3249
+        String idNumber1 = "911029-9212"; //3249
         String idNumber2 = "640123-8826";
         String idNumber3 = "550414-0913";
 
