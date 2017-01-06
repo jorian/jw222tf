@@ -6,25 +6,25 @@ package jw222tf_assign4.newsagency;
 public class NewsMain {
     public static void main(String args[]) {
 
-        Newspaper volkskrant = new Newspaper("Volkskrant");
-        Newspaper trouw = new Newspaper("Trouw");
-        Newspaper telegraaf = new Newspaper("De Telegraaf");
-        Newspaper nrc = new Newspaper("NRC Handelsblad");
+        Newspaper newyorktimes = new Newspaper("The New York Times");
+        Newspaper washingtonpost = new Newspaper("The Washington Post");
+        Newspaper wallstreetjournal = new Newspaper("Wall Street Journal");
+        Newspaper chicagotribune = new Newspaper("Chicago Tribune");
 
         NewsAgency reuters = new NewsAgency("Reuters");
 
-        reuters.registerNewspaper(volkskrant);
-        reuters.registerNewspaper(trouw);
-        reuters.registerNewspaper(telegraaf);
-        reuters.registerNewspaper(nrc);
+        reuters.registerNewspaper(newyorktimes);
+        reuters.registerNewspaper(washingtonpost);
+        reuters.registerNewspaper(wallstreetjournal);
+        reuters.registerNewspaper(chicagotribune);
 
-        NewsArticle vkartikel = new NewsArticle(volkskrant, "Honderd doden door verkeersongeluk.");
-        NewsArticle trArtikel = new NewsArticle(trouw, "Pasen komt vroeg dit jaar");
+        NewsArticle nytArticle = new NewsArticle(newyorktimes, "100 casualties after car accident");
+        NewsArticle wpArticle = new NewsArticle(washingtonpost, "Christmas came early this year");
 
-        volkskrant.sendNews(reuters, vkartikel);
-        trouw.sendNews(reuters, trArtikel);
+        newyorktimes.sendNews(reuters, nytArticle);
+        washingtonpost.sendNews(reuters, wpArticle);
 
-        nrc.printArticles();
+        chicagotribune.printArticles();
     }
 }
 

@@ -17,10 +17,6 @@ public class Newspaper {
         return name;
     }
 
-    NewsArticle newNewsArticle(String headline) {
-        return new NewsArticle(this, headline);
-    }
-
     void sendNews(NewsAgency agency, NewsArticle newsArticle) {
         Newspaper temp = newsArticle.getOwner();
         agency.collectNews(newsArticle);
