@@ -17,4 +17,8 @@ public class NewsArticle {
     Newspaper getOwner() {
         return newspaper;
     }
+
+    String getHeadline() {
+        return headline;
+    }
 }

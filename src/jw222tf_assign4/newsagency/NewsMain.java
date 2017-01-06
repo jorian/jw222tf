@@ -22,5 +22,9 @@ public class NewsMain {
         NewsArticle trArtikel = new NewsArticle(trouw, "Pasen komt vroeg dit jaar");
 
         volkskrant.sendNews(reuters, vkartikel);
+        trouw.sendNews(reuters, trArtikel);
+
+        nrc.printArticles();
     }
 }
+

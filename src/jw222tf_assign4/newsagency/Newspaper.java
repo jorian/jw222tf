@@ -29,4 +29,10 @@ public class Newspaper {
     void receiveNews(NewsArticle newsArticle) {
         articles.add(newsArticle);
     }
+
+    void printArticles() {
+        for (NewsArticle eaNews : articles) {
+            System.out.println(eaNews.getHeadline());
+        }
+    }
 }
