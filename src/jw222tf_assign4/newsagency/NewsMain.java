@@ -11,22 +11,25 @@ public class NewsMain {
         Newspaper wallstreetjournal = new Newspaper("Wall Street Journal");
         Newspaper chicagotribune = new Newspaper("Chicago Tribune");
 
+        Newspaper[] newspapers = {newyorktimes, wallstreetjournal, washingtonpost, chicagotribune};
+
         NewsAgency reuters = new NewsAgency("Reuters");
 
-        reuters.registerNewspaper(newyorktimes);
-        reuters.registerNewspaper(washingtonpost);
-        reuters.registerNewspaper(wallstreetjournal);
-        reuters.registerNewspaper(chicagotribune);
+        for (Newspaper eaNewspaper : newspapers) {
+            reuters.registerNewspaper(eaNewspaper);
+        }
 
         NewsArticle nytArticle = new NewsArticle(newyorktimes, "100 casualties after car accident");
         NewsArticle wpArticle = new NewsArticle(washingtonpost, "Christmas came early this year");
         NewsArticle ctArticle = new NewsArticle(chicagotribune, "Trump almost president");
 
-        newyorktimes.sendNewsToAgency(reuters, nytArticle);
-        washingtonpost.sendNewsToAgency(reuters, wpArticle);
+        newyorktimes.sendAllNewsToAgency(reuters);
 
-        wallstreetjournal.printArticles();
-        chicagotribune.printArticles();
+        washingtonpost.sendNewsArticleToAgency(reuters, wpArticle);
+
+        for (Newspaper eaNewspaper : newspapers) {
+            eaNewspaper.printArticles();
+        }
     }
 }
 

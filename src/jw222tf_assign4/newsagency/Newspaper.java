@@ -21,7 +21,13 @@ public class Newspaper {
         articles.add(newsArticle);
     }
 
-    void sendNewsToAgency(NewsAgency agency, NewsArticle newsArticle) {
+    void sendAllNewsToAgency(NewsAgency agency) {
+        for (NewsArticle eaNews : articles) {
+            agency.collectNews(eaNews);
+        }
+    }
+
+    void sendNewsArticleToAgency(NewsAgency agency, NewsArticle newsArticle) {
         agency.collectNews(newsArticle);
     }
 
