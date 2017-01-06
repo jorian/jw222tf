@@ -20,10 +20,12 @@ public class NewsMain {
 
         NewsArticle nytArticle = new NewsArticle(newyorktimes, "100 casualties after car accident");
         NewsArticle wpArticle = new NewsArticle(washingtonpost, "Christmas came early this year");
+        NewsArticle ctArticle = new NewsArticle(chicagotribune, "Trump almost president");
 
-        newyorktimes.sendNews(reuters, nytArticle);
-        washingtonpost.sendNews(reuters, wpArticle);
+        newyorktimes.sendNewsToAgency(reuters, nytArticle);
+        washingtonpost.sendNewsToAgency(reuters, wpArticle);
 
+        wallstreetjournal.printArticles();
         chicagotribune.printArticles();
     }
 }

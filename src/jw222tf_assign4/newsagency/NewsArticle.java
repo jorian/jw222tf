@@ -12,6 +12,7 @@ public class NewsArticle {
         newspaper = owner;
         this.owner = owner.getName();
         this.headline = headline;
+        owner.addToArticlesUponCreation(this);
     }
 
     Newspaper getOwner() {

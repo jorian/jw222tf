@@ -13,20 +13,24 @@ public class Newspaper {
         this.name = name;
     }
 
-    public String getName() {
+    String getName() {
         return name;
     }
 
-    void sendNews(NewsAgency agency, NewsArticle newsArticle) {
-        Newspaper temp = newsArticle.getOwner();
+    void addToArticlesUponCreation(NewsArticle newsArticle) {
+        articles.add(newsArticle);
+    }
+
+    void sendNewsToAgency(NewsAgency agency, NewsArticle newsArticle) {
         agency.collectNews(newsArticle);
     }
 
-    void receiveNews(NewsArticle newsArticle) {
+    void receiveNewsFromAgency(NewsArticle newsArticle) {
         articles.add(newsArticle);
     }
 
     void printArticles() {
+        System.out.println("\n-----Articles from: " + this.name + "-----");
         for (NewsArticle eaNews : articles) {
             System.out.println(eaNews.getHeadline());
         }

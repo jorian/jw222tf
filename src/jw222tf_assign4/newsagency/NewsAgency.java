@@ -22,7 +22,7 @@ public class NewsAgency {
     void broadcastNews(NewsArticle newsArticle) {
         for (Newspaper eaNewspaper : newspapers) {
             if (!eaNewspaper.equals(newsArticle.getOwner())) {
-                eaNewspaper.receiveNews(newsArticle);
+                eaNewspaper.receiveNewsFromAgency(newsArticle);
             }
         }
 
