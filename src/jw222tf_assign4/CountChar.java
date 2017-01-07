@@ -10,8 +10,17 @@ import java.util.Scanner;
 public class CountChar {
     public static void main(String[] args) {
         Scanner in;
+        /*
+        This is, imho, a better way of handling exceptions than shown in Histogram.java. Now this function will exit just fine
+        when the exception is caught, without trying to run the program because a System.exit() is missing.
+
+        The scanner in, when no exceptions are encountered, is passed as a parameter to the letterCounter function, where
+        calculations are done on the given text.
+
+        Output is printed there as well.
+         */
         try {
-            in = new Scanner(new File("/Users/JorianWielink/Desktop/HistoryOfProgramming.txt"));
+            in = new Scanner(new File("C:\\Users\\Jorian\\Desktop\\HistoryOfProgramming.txt"));
             letterCounter(in);
         }
         catch (Exception e) {
@@ -25,6 +34,10 @@ public class CountChar {
         int whiteSpace = 0;
         int others = 0;
 
+        /*
+        In theory, Scanner in could never be null, since all exceptions are caught. Still, asserting it is not null is
+        never wrong.
+         */
         while (in != null && in.hasNext()) {
             String line = in.nextLine();
             whiteSpace++; // since nextLine consumes the newline character.
@@ -48,8 +61,6 @@ public class CountChar {
         System.out.println("Uppercase: " + upperCase + "\nLowercase: " + lowerCase + "\nWhitespaces: " + whiteSpace +
                 "\nOthers: " + others);
 
-        // My IntelliJ IDE suggested to assert 'in' to be not null, because of NullPointerExceptions.
-        // Maybe I overlooked it, but it can't be null in this program, logically, right?
         assert in != null;
         in.close();
     }
