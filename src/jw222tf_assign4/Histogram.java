@@ -8,10 +8,16 @@ import java.util.Scanner;
  * Created by JorianWielink on 17/12/2016.
  */
 public class Histogram {
-    //Should I handle exceptions myself here?
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         File inputFile = new File(args[0]);
-        Scanner in = new Scanner(inputFile);
+        Scanner in = null;
+        try {
+            in = new Scanner(inputFile);
+        }
+        catch (IOException exception) {
+            System.out.println("Exception: File does not exist");
+            System.exit(0); //since program should not continue.
+        }
 
         int[] groupCollection = new int[10];
         int max = 0;
@@ -22,25 +28,38 @@ public class Histogram {
         /*
         Start a while loop to go through each line. Stops when no integer is found on the next line.
          */
-        while (in.hasNextInt()) {
-            int next = in.nextInt();
-            int group;
+        while (in.hasNextLine()) {
+            if (in.hasNextInt()) {
+                int next = in.nextInt();
+                int group;
 
-            /*
-            If integer is in interval [1, 100], a counter is accumulated.
-            Also, the integers are divided into groups by dividing them with 10, resulting in integers always rounded down
-            to the nearest integer,
-            in order to accumulate the corresponding element in the groupCollection array with 1.
-            Else, an outside range counter will be accumulated with 1.
-            */
-            if (next > 0 && next <= 100) {
-                insideRange++;
-                group = (next - 1) / 10;
-                groupCollection[group] = (groupCollection[group] + 1);
-            } else {
-                outsideRange++;
+        /*
+        If integer is in interval [1, 100], a counter is accumulated.
+        Also, the integers are divided into groups by dividing them with 10, resulting in integers always rounded down
+        to the nearest integer,
+        in order to accumulate the corresponding element in the groupCollection array with 1.
+        Else, an outside range counter will be accumulated with 1.
+        */
+                if (next > 0 && next <= 100) {
+                    insideRange++;
+                    group = (next - 1) / 10;
+                    groupCollection[group] = (groupCollection[group] + 1);
+                } else {
+                    outsideRange++;
+                }
+                nIntegers++;
             }
-            nIntegers++;
+            else {
+                /*
+                The following does not take multiple consecutive lines of missing integers into account, resulting
+                in incorrect error messages displaying the same line number.
+                I think it lies outside the scope of this exercise to fix this.
+                 */
+                System.out.printf("Skipped line %s: No integer was found.\n", nIntegers + 1);
+                if (in.hasNext()) {
+                    in.next();
+                }
+            }
         }
         in.close();
 
