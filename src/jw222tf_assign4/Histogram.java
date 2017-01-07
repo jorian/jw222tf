@@ -8,6 +8,7 @@ import java.util.Scanner;
  * Created by JorianWielink on 17/12/2016.
  */
 public class Histogram {
+    //Should I handle exceptions myself here?
     public static void main(String[] args) throws IOException {
         File inputFile = new File(args[0]);
         Scanner in = new Scanner(inputFile);
@@ -25,10 +26,13 @@ public class Histogram {
             int next = in.nextInt();
             int group;
 
-            // If integer is in interval [1, 100], a counter is accumulated.
-            // Also, the integers are divided into groups by dividing them with 10,
-            // in order to accumulate the corresponding element in the groupCollection array with 1.
-            // Else, an outside range counter will be accumulated with 1.
+            /*
+            If integer is in interval [1, 100], a counter is accumulated.
+            Also, the integers are divided into groups by dividing them with 10, resulting in integers always rounded down
+            to the nearest integer,
+            in order to accumulate the corresponding element in the groupCollection array with 1.
+            Else, an outside range counter will be accumulated with 1.
+            */
             if (next > 0 && next <= 100) {
                 insideRange++;
                 group = (next - 1) / 10;
