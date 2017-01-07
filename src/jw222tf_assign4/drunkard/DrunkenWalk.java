@@ -9,7 +9,6 @@ import java.util.Scanner;
 public class DrunkenWalk {
     public static void main(String args[]) {
         int fellIntoWater = 0;
-        int partyPeople = 0;
 
         /*
         Found this: http://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html
@@ -39,7 +38,7 @@ public class DrunkenWalk {
             }
 
             System.out.print("Enter the number of walks: ");
-            partyPeople = 0;
+            int partyPeople = 0;
             try {
                 partyPeople = sc.nextInt();
             } catch (InputMismatchException e) {
