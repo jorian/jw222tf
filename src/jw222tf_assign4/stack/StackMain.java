@@ -7,7 +7,15 @@ public class StackMain {
     public static void main(String[] args) {
 
         Stacker Stapel = new Stacker(7);
-
+        //try {
+            Stapel.pop();
+        //}
+        //catch (Exception e) {
+        //    e.getMessage();
+        //}
+    }
+}
+        /*
         Stapel.push(43);
         Stapel.push(3);
 //        Stapel.push(4);
@@ -42,3 +50,4 @@ public class StackMain {
         }
     }
 }
+*/

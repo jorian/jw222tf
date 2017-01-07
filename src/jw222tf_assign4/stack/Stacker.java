@@ -5,10 +5,10 @@ package jw222tf_assign4.stack;
  */
 public class Stacker implements IStack {
     private int size;
-    private Object[] stapel;
+    private Object[] stack;
 
     Stacker(int stackSize) {
-        stapel = new Object[stackSize];
+        stack = new Object[stackSize];
     }
 
     @Override
@@ -23,28 +23,23 @@ public class Stacker implements IStack {
 
     @Override
     public void push(Object element) {
-        stapel[size()] = element;
+        stack[size()] = element;
         size++;
     }
 
     @Override
     public Object pop() {
-        if (size() > 0) {
             size--;
-            return stapel[size()];
-        } else {
-            System.out.println("No elements in stack");
-            return null;
-        }
+            return stack[size()];
     }
 
     @Override
     public Object peek() {
-        return stapel[size() - 1];
+        return stack[size() - 1];
     }
 
     @Override
     public Iterator iterator() {
-        return new Iterator(stapel, size);
+        return new Iterator(stack, size);
     }
 }
