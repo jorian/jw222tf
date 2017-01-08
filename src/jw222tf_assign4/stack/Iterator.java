@@ -5,6 +5,10 @@ package jw222tf_assign4.stack;
  */
 
 class Iterator {
+    /*
+    This Iterator class is used to iterate through the objects, such as virtual plates in a restaurant.
+     */
+
     private int firstElement = 0;
     private Object[] elements;
     private int max;

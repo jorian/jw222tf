@@ -4,6 +4,10 @@ package jw222tf_assign4.drunkard;
  * Created by Jorian on 6-1-2017 at 12:08.
  */
 public class RandomWalk {
+    /*
+    RandomWalk is a program that let's a virtual person walk randomly a fixed size of steps on a fixed size pane.
+    To determine positions, x- and y-axes are used.
+     */
     private int xCoord;
     private int yCoord;
     private int maxSteps;
@@ -46,14 +50,25 @@ public class RandomWalk {
         stepCount++;
     }
 
+    /*
+    Determines if more steps can be taken
+     */
     boolean moreSteps() {
         return stepCount < maxSteps;
     }
 
+    /*
+    Determines if coordinate is inside given bounds.
+    Pane size can be negative, since the position (x,y) on the axes also work with negative integers, i.e. -34,-23 to
+    determine a position.
+     */
     boolean inBounds() {
         return (Math.abs(xCoord) < paneSize && Math.abs(yCoord) < paneSize);
     }
 
+    /*
+    If more steps are allowed and the coordinates do not exceed the pane size, a step is taken.
+     */
     public void walk() {
         while (inBounds() && moreSteps()) {
             takeStep();

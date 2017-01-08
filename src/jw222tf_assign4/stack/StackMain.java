@@ -5,43 +5,37 @@ package jw222tf_assign4.stack;
  */
 public class StackMain {
     public static void main(String[] args) {
+        Stacker stack = new Stacker(7);
 
-        Stacker Stapel = new Stacker(7);
-        //try {
-            Stapel.pop();
-        //}
-        //catch (Exception e) {
-        //    e.getMessage();
-        //}
-    }
-}
         /*
-        Stapel.push(43);
-        Stapel.push(3);
-//        Stapel.push(4);
-//        Stapel.push(34);
-//        Stapel.push(54);
-//        Stapel.push(99);
-//        Stapel.push(23); // index out of bound.
+        Throws ArrayIndexOutOfBoundException if element is pushed when the array size has been reached.
+         */
+        stack.push(43);
+        stack.push(3);
+        stack.push(4);
+        stack.push(34);
+        stack.push(54);
+        stack.push(99);
+        stack.push(23);
 
-        System.out.println("Amount in stack: " + Stapel.size());
+        System.out.println("Amount in stack: " + stack.size());
 
-        System.out.println("Is stack empty? " + Stapel.isEmpty());
+        System.out.println("Is stack empty? " + stack.isEmpty());
 
-        System.out.println("Get one from stack: " + Stapel.pop());
+        System.out.println("Get one from stack: " + stack.pop());
 
-        System.out.println("Check next one: " + Stapel.peek());
+        System.out.println("Check next one: " + stack.peek());
 
-        System.out.println("Get one from stack: " + Stapel.pop());
-        System.out.println("Get one from stack: " + Stapel.pop());
+        System.out.println("Get one from stack: " + stack.pop());
+        System.out.println("Get one from stack: " + stack.pop());
 
-        System.out.println("Remaining amount in stack: " + Stapel.size());
+        System.out.println("Remaining amount in stack: " + stack.size());
 
-        System.out.println("Is stack empty? " + Stapel.isEmpty());
+        System.out.println("Is stack empty? " + stack.isEmpty());
 
-        Iterator iter = Stapel.iterator();
+        Iterator iter = stack.iterator();
 
-        if (!Stapel.isEmpty()) {
+        if (!stack.isEmpty()) {
             System.out.println("\nRemaining elements in stack:");
             while (iter.hasNext()) {
                 Object o = iter.next();
@@ -50,4 +44,3 @@ public class StackMain {
         }
     }
 }
-*/

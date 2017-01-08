@@ -12,6 +12,7 @@ public class NewsArticle {
         newspaper = owner;
         this.owner = owner.getName();
         this.headline = headline;
+        //When a newspaper creates a news article, it automatically gets added to the ArrayList in the Newspaper instance:
         owner.addToArticlesUponCreation(this);
     }
 

@@ -13,6 +13,8 @@ public class DrunkenWalk {
         /*
         Found this: http://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html
         to automatically close the scanner at the end of the statement.
+
+        Each input is checked if input is integer and if input is positive. (is this a correct way to handle this?)
          */
         try (Scanner sc = new Scanner(System.in)) {
             System.out.print("Enter the size: ");
