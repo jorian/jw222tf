@@ -13,13 +13,16 @@ import java.util.Scanner;
 public class SortCities {
 
     public static void addCitiesToArray() throws FileNotFoundException {
-        String fileLocation = "/Users/JorianWielink/Desktop/cities-edit.txt";
+        String fileLocation = "C:\\Users\\Jorian\\Desktop\\cities.dat";
         Scanner citiesList = new Scanner(new File(fileLocation));
         ArrayList<City> citiesArray = new ArrayList<>();
         //City[] citiesArray = new City[1000];
         int pop;
         String name;
 
+        /*
+        Make sure your text file is encoded in UTF-8.
+         */
         while (citiesList.hasNextLine()) {
             String line = citiesList.nextLine();
             int delimiterLocation = 0;
