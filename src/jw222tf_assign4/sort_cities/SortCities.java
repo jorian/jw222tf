@@ -11,7 +11,6 @@ import java.util.Scanner;
  * Created by JorianWielink on 29/12/2016.
  */
 public class SortCities {
-
     public static void addCitiesToArray() throws FileNotFoundException {
         String fileLocation = "C:\\Users\\Jorian\\Desktop\\cities.dat";
         Scanner citiesList = new Scanner(new File(fileLocation));
